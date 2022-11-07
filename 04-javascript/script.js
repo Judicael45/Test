@@ -15,7 +15,7 @@ console.log("banane:",banane);
 var tomate;
 // On peut aussi déclarer une variable avec "var", mais la portée sera plus grande.
 const cerise = 5;
-// const permet de déclarer une consstante, c'est à dire une variable dont la valeur ne pourra pas changer. Par ce fait, elle doit êtres défini au moment de sa déclaration.
+// const permet de déclarer une constante, c'est à dire une variable dont la valeur ne pourra pas changer. Par ce fait, elle doit êtres défini au moment de sa déclaration.
 banane = 2;
 tomate =6;
 let a,b,c;
@@ -94,15 +94,15 @@ s2 = "Le grand ordinateur à dit '42'";
         Cela indiquera à JS de ne pas prendre en compte ce caractère.    
 */
 s1 = "Karl"
-s2 = "Bonjour" + s1 + "Comment vas tu ?";
+s2 = 'Bonjour ' + s1 + " Comment vas tu ?"
 console.log(s2);
 /*Le symbole de la concaténation (Fusion de chaine de caractère)
  en JS est "+"
  */
-s3= 'Bonjour ${s1} Comment vas tu ?';
+s3= `Bonjour ${s1} Comment vas tu ?`;
 console.log(s3);
 /* 
-    Les string en ~~ permettent de faire usage d'interpolation.
+    Les string en `` permettent de faire usage d'interpolation.
     C'est à dire de pouvoir intégrer du JS directement dans le string.
     pour cela on utlisera "${}"
 */

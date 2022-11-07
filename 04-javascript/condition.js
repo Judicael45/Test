@@ -53,9 +53,27 @@ switch(ville.toLowerCase())
     case"paris":
     alert("De la capital donc")
     break
+    // Le mot clef "break" permet d'arrêter le cas ici et de ne pas lancer les prochaines actions.
     case"lille":
     alert("Moule,frite et bière")
     break
+    // Le mot clef "default" permet de crée un cas par défaut qui se lance si les précédents ne correspondent pas
     default:
         alert("Je ne connais pas")
 }
+
+//------------------------??-------------------------
+let a,b= undefined, c=null,d="chaussette",e=
+{nom:"Bruno"},f=["test"]
+// Le"??" permet de vérifier si la variable précédente est défini et dans le cas contraire, 
+// ultiliser ce qui est donné après les "??"
+console.log(
+    a??"Coucou",
+    b??"Coucou",
+    c??"Coucou",
+    d??"Coucou",
+    e.nom ??"Coucou",
+    e.prenom??"Coucou",
+    f[0]??"Coucou",
+    f[1]??"Coucou"
+    );

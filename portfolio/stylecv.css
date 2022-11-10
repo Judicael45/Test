@@ -7,40 +7,29 @@
     box-sizing: border-box;
     font-weight: bold;
   }
-
   .TitreCV {
     color: #EA0;
   }
-
   body {
     background: #ededed;
   }
-
   p {
     font-size: 1em;
     line-height: 1.5em;
   }
-
   a {
     text-decoration: none;
     color: #000;
   }
-
   /*HEADER & FOOTER*/
-  header,
-  footer {
+  header {
     width: 100%;
     padding: 20px 0px;
     background: url("Assets/profile.webp") #4f4f4f;
     box-shadow: 0px 0px 15px #333;
-  }
-
-  header {
     background-image: url(Assets/HeaderW.jpg);
-    width: 100%;
     height: 120px;
   }
-
   header h1 {
     color: white;
     font-size: 1.5em;
@@ -48,13 +37,11 @@
     margin: 0 auto;
 
   }
-
   .Tcomp {
     color: rgb(5, 104, 129);
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
-
   .comp3 {
     width: 60%;
     height: min-content;
@@ -63,22 +50,18 @@
     border-color: rgb(5, 104, 129);
 
   }
-
   footer {
     border-top: 2px solid #fff;
   }
-
   footer p {
     width: 90%;
     margin: 0 auto;
     color: #fff;
     text-align: center;
   }
-
   footer a {
     color: #fff;
   }
-
   /*SECTIONS*/
   section {
     display: flex;
@@ -90,22 +73,18 @@
     box-shadow: 0px 0px 10px #bbb;
     background-color: #fff;
   }
-
   section h2 {
     margin: 20px 0;
     width: 90%;
     display: row wrap;
   }
-
   section>div {
     width: 90%;
   }
-
   /*SECTION INFOS*/
   .photo {
     text-align: center;
   }
-
   .photo img {
     width: 150px;
     height: 150px;
@@ -114,11 +93,9 @@
     border-radius: 50%;
     margin-top: -80px;
   }
-
   .prez {
     border-bottom: 2px dashed #ccc;
   }
-
   .prez a {
     display: block;
     text-align: center;
@@ -135,22 +112,18 @@
     flex-flow: row wrap;
     align-items: center;
   }
-
   .contact-flex p:first-child {
     flex: 0 0 40%;
   }
-
   .contact-flex p:last-child {
     flex: 0 0 60%;
   }
-
   .conteneur1 {
     overflow: hidden;
     max-width: 960px;
     margin: 50px auto;
     box-shadow: 0px 15px 10px -5px #777;
   }
-
   .d1 {
     width: 3840px;
     height: 720px;
@@ -159,7 +132,6 @@
     background-size: contain;
     animation: defilement1 12s linear infinite;
   }
-
   @keyframes defilement1 {
     0% {
       transform: translate(0, 0);
@@ -169,14 +141,12 @@
       transform: translate(-2880px, 0);
     }
   }
-
   .conteneur2 {
     max-width: 960px;
     overflow: hidden;
     margin: 50px auto;
     box-shadow: 0px 0px 10px #777;
   }
-
   .d2 {
     width: 400%;
     height: 0;
@@ -240,7 +210,6 @@
       scroll-snap-align: center;
     }
   }
-
   body {
 
     margin: 0 auto;
@@ -271,18 +240,15 @@
   * {
     -ms-overflow-style: none;
   }
-
   ol,
   li {
     list-style: none;
     margin: 0;
     padding: 0;
   }
-
   .contact-group {
     display: flex;
   }
-
   .carousel {
     position: relative;
     /* padding-top: 75%; */
@@ -292,7 +258,6 @@
     aspect-ratio: 1/1;
     border-radius: 10%;
   }
-
   .carousel__viewport {
     position: absolute;
     top: 0;
@@ -306,7 +271,6 @@
     scroll-snap-type: x mandatory;
     border-radius: 10%;
   }
-
   .carousel__slide {
     position: relative;
     flex: 0 0 100%;
@@ -314,29 +278,16 @@
     background-color: white;
     counter-increment: item;
     text-align: center;
-    /* padding-top: 60px; */
+    
   }
-
   .carousel__slide img {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
-
   .carousel__slide:nth-child(even) {
     background-color: white;
   }
-
-  /* .carousel__slide:before {
-      content: counter(item);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate3d(-50%,-40%,70px);
-      color: #fff;
-      font-size: 2em;
-    } */
-
   .carousel__snapper {
     position: absolute;
     top: 0;
@@ -347,7 +298,6 @@
     text-align: center;
     /* padding-top: 60px; */
   }
-
   @media (hover: hover) {
     .carousel__snapper {
       animation-name: tonext, snap;
@@ -355,12 +305,10 @@
       animation-duration: 4s;
       animation-iteration-count: infinite;
     }
-
     .carousel__slide:last-child .carousel__snapper {
       animation-name: tostart, snap;
     }
   }
-
   @media (prefers-reduced-motion: reduce) {
     .carousel__snapper {
       animation-name: none;
@@ -368,12 +316,10 @@
       background-position: center;
     }
   }
-
   .carousel:hover .carousel__snapper,
   .carousel:focus-within .carousel__snapper {
     animation-name: none;
   }
-
   .carousel__navigation {
     position: absolute;
     right: 0;
@@ -382,12 +328,10 @@
     text-align: center;
 
   }
-
   .carousel__navigation-list,
   .carousel__navigation-item {
     display: inline-block;
   }
-
   .carousel__navigation-button {
     display: inline-block;
     width: 1.5rem;
@@ -399,7 +343,6 @@
     font-size: 0;
     transition: transform 0.3s;
   }
-
   .carousel::before,
   .carousel::after,
   .carousel__prev,
@@ -414,12 +357,10 @@
     font-size: 0;
     outline: 0;
   }
-
   .carousel::before,
   .carousel__prev {
     left: -1rem;
   }
-
   .carousel::after,
   .carousel__next {
     right: -1rem;
@@ -435,7 +376,6 @@
         white max(9.5rem, 27vh));
     overflow: hidden;
   }
-
   img {
     border-radius: 0.5rem 0.5rem 0 0;
     width: 100%;
@@ -470,7 +410,51 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
-
+  .progressB {
+    margin: 3px;
+    background-color: grey;
+    width: 98%;
+        border-radius: 15px;
+  }
+  .SkillB {
+    background-color: orangered;
+    color: rgba(0, 0, 0, 0.699);
+    padding: 2%;
+    width: 80%;
+    text-align: right;
+    font-size: 15px;
+        border-radius: 15px;
+  }
+  .progressB1 {
+    margin: 3px;
+    background-color: grey;
+    width: 98%;
+        border-radius: 15px;
+  }
+  .SkillB1 {
+    background-color: rgb(6, 135, 240);
+    color: rgba(0, 0, 0, 0.699)e;
+    padding: 2%;
+    width: 80%;
+    text-align: right;
+    font-size: 15px;
+        border-radius: 15px;
+  }
+  .progressB2 {
+    margin: 3px;
+    background-color: grey;
+    width: 98%;
+        border-radius: 15px;
+  }
+  .SkillB2 {
+    background-color: yellow;
+    color: rgba(0, 0, 0, 0.699);
+    padding: 2%;
+    width: 30%;
+    text-align: right;
+    font-size: 15px;
+        border-radius: 15px;
+  }
   .ImgC{
     position: relative;
     display: flex;
@@ -478,13 +462,33 @@
     width: 100%;
     object-fit: contain;
   }
- 
 .ctext{
   color: rgb(5, 104, 129);
   text-align: center;
 }
-
 .card p{
   font-weight: bold;
   text-align: center;
+}
+footer{
+  width: 100%;
+  padding: 20px 0px;
+  background: url("Assets/profile.webp") #4f4f4f;
+  box-shadow: 0px 0px 15px #333;
+  background-image: url(Assets/HeaderW.jpg);
+  height: 120px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 0px;
+  margin-top: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  font-weight: bold;
+  border-color: #0003 ;
+}
+
+footer p, h2{
+  text-align: left;
+  color: white;
+  font-size: 18px;
+  margin: 0 auto;
 }

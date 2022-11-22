@@ -17,20 +17,20 @@ function changeTheme2() {
     if (red.checked) {
         // documentElement représenter l'élément racine.
         document.documentElement.style.setProperty("--fond", "red")
-        document.documentElement.style.setProperty("--text", "black")
+        document.documentElement.style.setProperty("--text", "antiquewhite")
         // Je sauvegarde mon thème sombre
         localStorage.setItem("theme", "red")
         red.checked = true
     }
     else if(yellow.checked) {
         document.documentElement.style.setProperty("--fond", "yellow")
-        document.documentElement.style.setProperty("--text", "black")
+        document.documentElement.style.setProperty("--text", "antiquewhite")
         // Je retire mon thème sombre
         localStorage.setItem("theme", "yellow")
     }
     else if(green.checked){
         document.documentElement.style.setProperty("--fond", "green")
-        document.documentElement.style.setProperty("--text", "black")
+        document.documentElement.style.setProperty("--text", "antiquewhite")
         // Je retire mon thème sombre
         localStorage.setItem("theme", "green")
     }

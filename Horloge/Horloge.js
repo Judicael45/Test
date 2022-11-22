@@ -28,6 +28,8 @@ function clock() {
   document.querySelector('.minute').style.transform = `rotate(${minute}deg)`;
   document.querySelector('.seconde').style.transform = `rotate(${second}deg)`;
 }
+ 
+ let setInterval = (clock, 1000);
+ 
 
-setInterval(clock, 1000);
 

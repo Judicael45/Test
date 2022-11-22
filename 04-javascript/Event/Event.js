@@ -139,3 +139,32 @@ btn2.addEventListener('click', function onClick() {
 
   
   
+
+
+
+
+const b3 = document.querySelector(".div3 button");
+const modal = document.querySelector(".modal");
+const btnModal = document.querySelector(".mdal button:last-of-type");
+function modal(){
+    modal.classList.toggle("hidden");
+}
+b3.addEventListener("click",modal);
+btnModal.addEventListener("click",modal);
+
+
+const sp = document.querySelecto(".endOfFile")
+sp.addEventListener("mouseenter",followOn)
+document.body.addEventListener("click", followOff)
+function followOn(e){
+    sp.style.position = "absolute"
+    document.body.addEventListener("mousemove", follow);
+}
+function follow(e){
+    sp.style.top = e.clientY,"px";
+    sp.style.left = e.clientX,"px";
+}
+function followOff(){
+    sp.style.position = "";
+    document.body.removeEventListener("mousemove",follow)
+}

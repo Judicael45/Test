@@ -6,32 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regex en JS</title>
     <link rel="stylesheet" href="Regex.css">
-    <script src="Regex.js"></script>
-</head>
-<body>
-    <form action="" method="get">
-        <fieldset>
-            <legend></legend>
-            <label for=""></label>
-            <label for="telephone">Téléphone</label>
-            <input type="tel" name="" id="">
-            <label for="email">Email:</label>
-            <input type="email" name="mail" id="mail">
-        </fieldset>
-        <fieldset>
-            <legend>Identifiants</legend>
-            <label for="user">Nom d'Utilisateur :</label>
-            <input type="text" name="username" id="user">
-            <label for="pass" name="password" id="pass"></label>
-            <div class="bar">
-                <div class="progress">
-
+    <script src="Regex.js" defer></script>
+    <head>
+    </head>
+    <body>
+        <form action="" method="get">
+            <fieldset>
+                <legend>Coordonnées</legend>
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" name="tel" id="telephone">
+                <label for="email">Email :</label>
+                <input type="email" name="mail" id="email">
+            </fieldset>
+            <fieldset>
+                <legend>Identifiants</legend>
+                <label for="user">Nom d'Utilisateur :</label>
+                <input type="text" name="username" id="user">
+                <label for="pass">Mot de Passe :</label>
+                <input type="password" name="password" id="pass" >
+                <div class="bar">
+                    <div class="progress"></div>
                 </div>
-            </div>
-            <label for="passBis">Confirmation du Mot de Passe:</label>
-            <input type="password" name="passwordBis" id="passBis">
+                <label for="passBis">Confirmation du Mot de Passe :</label>
+                <input type="password" name="passwordBis" id="passBis">
+            </fieldset>
             <input type="submit" value="Inscription">
-        </fieldset>
-    </form>
-</body>
-</html>
+        </form>
+    </body>
+    </html>

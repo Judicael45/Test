@@ -79,21 +79,21 @@ console.log(phrase2.match(/vive/gi));
 //-------------------------------replace----------------------------
 // Replace est une méthode de string qui va remplacer le premier élément donné en argument,par le second. (là aussi il accepte string comme regex)
 
-console.log(phrase.replace("pizza","salade"));
+console.log(phrase.replace("pizza", "salade"));
 // même résultat.
-console.log(phrase.replace(/pizza/,"salade"));
+console.log(phrase.replace(/pizza/, "salade"));
 // l'avantage d'une regex, c'est que l'on peut vérifier des cas plus complexe.
-console.log(phrase.replace(/pizza|okonomiyaki|cannelé/gi,"salade(s)"));
-console.log(phrase2.replace(/regex|javascript/,"*******"));
+console.log(phrase.replace(/pizza|okonomiyaki|cannelé/gi, "salade(s)"));
+console.log(phrase2.replace(/regex|javascript/, "*******"));
 // On peut avec "$&" garder l'élément recherché et lui accoler d'autres éléments.
-console.log(phrase2.replace(/javascript/gi,"$& et CSS"));
-console.log(phrase2.replace(/regex/gi,"'$&'(c'est faux)"));
+console.log(phrase2.replace(/javascript/gi, "$& et CSS"));
+console.log(phrase2.replace(/regex/gi, "'$&'(c'est faux)"));
 
 
 
 //-----------------------bonus---------------------
-const phrase3 = 
-`1er : Maurice
+const phrase3 =
+    `1er : Maurice
 2ème : Paul
 3ème : Charli`;
 //Avec le flag "m" chaque ligne sera testé comme un string séparé, donc ici il nous trouvera tous les chiffres.
@@ -110,6 +110,47 @@ console.log(/^[a-zéèâäë]+$/.test("élodie"));
 // Avec le flag "s" ils sont prit en compte.
 console.log(phrase3.match(/1.+3/s));
 // On peut aussi construire une regex via un string grâce au constructeur de regex "regExp" qui prend en premier argument la regex et en second les flags.
-const r19 = new RegExp("^[A-z]+$","gi")
+const r19 = new RegExp("^[A-z]+$", "gi")
 // Attention, de A majuscule à z minuscule, certains caractères spécieux se cachent : 
-console.log(r19,r19.test("Hello_World"));
+console.log(r19, r19.test("Hello_World"));
+
+
+
+//-----------------excercice---------------
+
+const user2 = document.querySelector("#user")
+const user =/^[A-Z][a-z]+(-[A-Z][a-z]+)?$/;
+const usbtn = document.querySelector("input[name='tel']")
+user2.addEventListener("input",error)
+console.log(usbtn);
+
+function error() {
+    if (!user.test(user2.value)) {
+        user2.style.backgroundColor = "red"
+    } else {
+        user2.style.backgroundColor = "green"
+    }
+}
+
+
+
+
+
+
+
+
+
+const mdp1 = document.querySelector("#pass")
+const regmdp = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
+const inp = document.querySelector("input[nam='password']")
+mdp1.addEventListener("input",validateMDP)
+
+function validateMDP() {
+
+if (validateMDP(regmdp.test(mdp1.value)) ){
+    mdp1.style.backgroundColor="green"
+}else{
+mdp1.style.backgroundColor ="red"
+}
+}
+

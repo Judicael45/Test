@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="JSONexo.css">
-    <script src="./JSONexo.js"defer></script>
+    <script src="./JSONexo.js" defer></script>
 </head>
+
 <body>
     <div>
-    <form action="">
-        <H1>Liste des choses a faire</H1>
-        <input type="text" name="ajouter" id="ajouter">
-        <input  id="aj"  type="submit" value="Ajouter">
-        <ul id="liste">
-            <li>bonjour</li>
-            <li>ca va</li>
-          </ul>
-    </form>
-</div>
-</script>
+        <form action="">
+            <div id="todo">
+                <div class="headerTodo">
+                    <h2>Liste des choses à faire</h2>
+                    <div class="formTodo">
+                        <input type="text" id="addTodo" placeholder="Titre...">
+                        <span class="addBtn">
+                            Ajouter
+                        </span>
+                    </div>
+                </div>
+                <ul id="list"></ul>
+            </div>
+        </form>
+    </div>
+    </script>
 </body>
+
 </html>

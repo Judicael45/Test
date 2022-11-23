@@ -1,56 +1,78 @@
 "use strict"
 
-const form = document.querySelector("form")
+const ulTodo = document.querySelector("#list")
+const btnTodo = document.querySelector('.addBtn')
+const inputTodo = document.querySelector("#addTodo")
+let listInfo = {}
+btnTodo.addEventListener("pointerdown", addLi)
 
-form.addEventListener("submit",saveData)
-
-function saveData(e){
-    
-
-    
-    e.preventDefault()
-
-  const data = new FormData(form)
-
-    let user = {}
-
-    data.forEach((value,name)=>{
-        user[name]= value
-        console.log(value);
-    })
-    const strUser = JSON.stringify(user);
-    localStorage.setItem("user", strUser);
+function addClose(div){
+const span = document.createElement("span")
+span.textContent = "\u00D7"
+span.classList.add("close")
+div.append(span)
+span.addEventListener("pointerdown",closeLi)
+div.addEventListener("click",checkLi)
 }
 
-const userString = localStorage.getItem("user")
-if(userString){
-   console.log(userString);
-    const user = JSON.parse(userString)
-    console.log(user);
-    
+function closeLi(e){
+e.stopPropagation()
+let div = e.target.parentElement
+delete listInfo [div.dataset.time]
+localStorage.setItem("todoList",JSON.stringify(listInfo))
+div.parentElement.remove()
+
 }
-function newElement() {
-    var li = document.createElement("li");
-    var inputValue = document.getElementById("Ajouter").value;
-    var t = document.createTextNode(inputValue);
-    li.appendChild(t);
-    if (inputValue === 'Ajouter') {
-      alert("Ajouter un texte!");
-    } else {
-      document.getElementById("$Ajouter").appendChild(li);
-    }
-    document.getElementById("#aj").value = ""
-  
-    var span = document.createElement("span");
-    var txt = document.createTextNode(inputValue);
-    span.className = "close";
-    span.appendChild(txt);
-    li.appendChild(span);
-  
-    for (i = 0; i < close.length; i++) {
-      close[i].onclick = function() {
-        var div = this.parentElement;
-        div.style.display = "none";
-      }
-    }
-  }
+
+function checkLi(e){
+this.classList.toggle("checked")
+listInfo[this.dataset.time].checked = this.classList.contains("checked")
+localStorage.setItem("todoList",JSON.stringify(listInfo))
+}
+function addLi(){
+  if(inputTodo.value ==="")
+  alert("Ne laisse pas ce champ vide !")
+  return
+}
+const li = document.createElement("li")
+const div = document.createElement("div")
+div.textContent = inputTodo.value
+div.dataset.time = Date.now()
+li.append(div)
+ulTodo.append(li)
+addClose(div)
+listInfo[div.dataset.time] = {value: inputTodo.value, checked:false}
+localStorage.setItem("todoList",JSON.stringify(listInfo))
+inputTodo.value = ""
+inputTodo.focus()
+//console.log(listInfo);
+
+function firstLoad(){
+listInfo = JSON.parse(localStorage.getItem("todoList"))??{}
+for(let id in listInfo)
+{
+  const el = listInfo[id]
+  const div = document.createElement("div")
+  const li = document.createElement("li")
+  div.textContent = el.value
+  div.dataset.time = id
+  div.classList.toggle("checked",el.checked)
+  li.append(div)
+  ulTodo.append(li)
+  addClose(div)
+  //bonus uniquement :
+  addEventDragAndDrop(div)
+}
+}
+
+firstLoad()
+//Bonus : 
+function dragStart(e){}
+function dragEnter(e){}
+function dragLeave(e){}
+function dragOver(e){}
+function dragDrop(e){}
+function dragEnd(e){}
+function addEventDragAndDrop(el){
+el.draggable = true
+}

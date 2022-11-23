@@ -9,6 +9,7 @@
   }
 
   .switch{
+    padding: 2%;
     position: relative;
     color: var(--font)
    }

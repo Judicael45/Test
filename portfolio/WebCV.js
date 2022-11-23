@@ -1,5 +1,6 @@
 "use strict"
 
+
 const black = document.querySelector("#blackTheme")
 const white = document.querySelector("#whiteTheme")
 black.addEventListener("input", changeTheme2);

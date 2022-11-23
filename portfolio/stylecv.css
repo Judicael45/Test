@@ -7,13 +7,23 @@
     box-sizing: border-box;
     font-weight: bold;
   }
+
   .switch{
     position: relative;
-    color: #EA0;
-    height: 40%;
-    margin-top: 50px;
-    margin-inline-start: 80%;
-  }
+    color: var(--font)
+   }
+   .switch1{
+    position: relative;
+    color: var(--font)
+   }
+ 
+ 
+
+header label input {
+  display: inline-table;
+position: relative;
+margin-bottom: 30px;
+}
   .TitreCV {
     color: #EA0;
   }
@@ -35,7 +45,6 @@
   }
   /*HEADER & FOOTER*/
   header {
-    display: inline-block;
     width: 100%;
     padding-right: 40%;
     padding: 20px 0px;
@@ -90,7 +99,7 @@
   section h2 {
     margin: 20px 0;
     width: 90%;
-    display: row wrap;
+    
   }
   section>div {
     width: 90%;
@@ -232,7 +241,7 @@
   * {
     box-sizing: border-box;
     scrollbar-color: transparent transparent;
-    scrollbar-width: 0px;
+    scrollbar-width: none;
   }
 
   *::-webkit-scrollbar {
@@ -268,6 +277,7 @@
     width: 20%;
     aspect-ratio: 1/1;
     border-radius: 10%;
+    
   }
   .carousel__viewport {
     position: absolute;
@@ -281,16 +291,18 @@
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     border-radius: 10%;
+   
 
   }
   .carousel__slide {
-    position: relative;
+    position:relative;
     flex: 0 0 100%;
     width: 100%;
     background-color: var(--text);
     counter-increment: item;
     text-align: center;
-    border-radius: white;
+    background-color: white;
+    border-color: white;
     
     
   }
@@ -380,12 +392,11 @@
   }
   /*groupe de carte compétence*/
   .card {
-    margin-top: 10%;
+    margin-top:10%;
     border-radius: 0.5rem;
-    box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem var(--text)(0, 0, 0, 0.45);
-    padding-bottom: 1rem;
-    background-image: linear-gradient(var(--card-gradient),
-    var(--font) max(9.5rem, 27vh));
+    box-shadow: 0.05rem 0.1rem 0.3rem -03rem rgba(0, 0, 0, 0.45);
+    padding-bottom:1rem;
+   
     overflow: hidden;
   }
   img {
@@ -421,7 +432,7 @@
     padding-right: 1rem;
   }
   .progressB {
-    margin: 3px;
+    margin: 5px;
     width: 98%;
         border-radius: 15px;
   }
@@ -435,7 +446,7 @@
         border-radius: 15px;
   }
   .progressB1 {
-    margin: 3px;
+    margin: 10px;
     width: 98%;
         border-radius: 15px;
   }
@@ -449,7 +460,7 @@
         border-radius: 15px;
   }
   .progressB2 {
-    margin: 3px;
+    margin: 10px;
     width: 98%;
         border-radius: 15px;
   }

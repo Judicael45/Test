@@ -148,7 +148,7 @@ class Missile {
 
 class Grid {
     constructor(){
-        this.position = { x:0,y:0}
+        this.position = {x:0,y:0}
         this.velocity = {x:0.5,y:0}
         this.invaders = [ ]
         let rows = Math.floor((world.height/34)*(1 / 3));

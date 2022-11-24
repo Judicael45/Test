@@ -29,8 +29,8 @@ margin-bottom: 30px;
     color: #EA0;
   }
   :root {
-    --font: black;
-    --text: white;
+    --font: rgb(20, 20, 20);
+    --text: rgba(255, 255, 255, 0.788);
   }
   body{
     background-color: var(--font);
@@ -46,14 +46,14 @@ margin-bottom: 30px;
   }
   /*HEADER & FOOTER*/
   header {
-    width: 100%;
-    padding-right: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
     padding: 20px 0px;
     background: url("Assets/profile.webp") #4f4f4f;
     box-shadow: 0px 0px 15px #333;
     background-image: url(Assets/HeaderW.jpg);
     border-radius: 10px;
-    height: 120px;
   }
   header h1 {
     color: var(--text);
@@ -63,19 +63,49 @@ margin-bottom: 30px;
 
   }
   .Tcomp {
-    color: rgb(5, 104, 129);
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
   .comp3 {
+    margin-left: auto;
+  margin-right: auto;
+  margin: 20px;
     width: 90%;
     height: 25%;
     display: inline-block;
     border-radius: 10px;
-    border-color: rgb(5, 104, 129);
+    
 
   }
+  .comp4 {
+    margin-left: auto;
+  margin-right: auto;
+    margin: 20px;
+    width: 90%;
+    height: 25%;
+    display: inline-block;
+    border-radius: 10px;
+  }
+  .comp4 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 25%;
+    display: inline-block;
+    border-radius: 10px;
+
+  }
+  .interet{
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    border-radius: 10px;
+  }
   footer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    border-radius: 10px;
     border-top: 2px solid var(--text);
   }
   footer p {
@@ -321,6 +351,7 @@ margin-bottom: 30px;
     height: 100%;
     scroll-snap-align: center;
     text-align: center;
+    
     /* padding-top: 60px; */
   }
   @media (hover: hover) {
@@ -339,6 +370,7 @@ margin-bottom: 30px;
       animation-name: none;
       text-align: center;
       background-position: center;
+
     }
   }
   .carousel:hover .carousel__snapper,
@@ -382,6 +414,7 @@ margin-bottom: 30px;
     border-radius: 50%;
     font-size: 0;
     outline: 0;
+  
   }
   .carousel::before,
   .carousel__prev {
@@ -391,6 +424,24 @@ margin-bottom: 30px;
   .carousel__next {
     right: -1rem;
   }
+
+  /*centre d'interet*/
+
+  .exp {
+    display: inline;
+    flex-flow: row wrap;
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 20px;
+    margin-top: 10px;
+}
+
+.exp-logo {
+  flex: 0 0 25%;
+  max-width: 100px;
+}
+
+
+
   /*groupe de carte compétence*/
   .card {
     margin-top:10%;
@@ -415,16 +466,18 @@ margin-bottom: 30px;
     place-content: center;
     justify-items: center;
     min-height: 100vh;
-    margin: 0;
+    margin-left: auto;
+  margin-right: auto;
     padding: 1rem;
     line-height: 1.5;
     font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
       helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
   }
   .card-wrapper {
+    margin-left: auto;
+  margin-right: auto;
     list-style: none;
-    margin-left: 10%;
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
     grid-gap: 1.5rem;
     max-width: 100vw;

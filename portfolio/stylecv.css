@@ -209,7 +209,7 @@ margin-bottom: 30px;
     animation: defilement2 12s linear infinite;
   }
 
-  @keyframes tonext {
+  /* @keyframes tonext {
     75% {
       left: 0;
     }
@@ -243,7 +243,7 @@ margin-bottom: 30px;
     99% {
       left: 0;
     }
-  }
+  } */
 
   @keyframes snap {
     96% {

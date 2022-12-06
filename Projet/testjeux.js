@@ -80,10 +80,10 @@ class Alien {
         this.velocity = {x:0 , y:0 }
         const image = new Image();
         image.src = './ghost.png';
-        image.onload =()=>{
+        image.onload =() => {
             this.image = image;
             this.width = 32;
-            this.height = 32   ;
+            this.height = 32;
             this.position = {
                 x: position.x,
                 y: position.y

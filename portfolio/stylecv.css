@@ -30,7 +30,7 @@ margin-bottom: 30px;
   }
   :root {
     --font: rgb(20, 20, 20);
-    --text: rgba(255, 255, 255, 0.788);
+    --text: #B3dee5;
   }
   body{
     background-color: var(--font);
@@ -139,7 +139,7 @@ margin-bottom: 30px;
   .photo {
     text-align: center;
   }
-  .photo img {
+  .photo .Profil {
     width: 150px;
     height: 150px;
     border: 3px solid #EA0;
@@ -150,12 +150,18 @@ margin-bottom: 30px;
   .prez {
     border-bottom: 2px dashed;
   }
+
+  .mail{
+    color: rgb(69, 69, 247);
+    text-decoration: underline;
+  }
+
   .prez a {
     display: block;
     text-align: center;
     padding: 10px;
     margin: 10px auto 30px auto;
-    color: var(--font);
+    color: rgb(69, 69, 247);
     background-color: #EA0;
     box-shadow: 0px 0px 10px ;
     border-radius: 5px;
@@ -185,15 +191,6 @@ margin-bottom: 30px;
     background-size: contain;
     animation: defilement1 12s linear infinite;
   }
-  @keyframes defilement1 {
-    0% {
-      transform: translate(0, 0);
-    }
-
-    100% {
-      transform: translate(-2880px, 0);
-    }
-  }
   .conteneur2 {
     max-width: 960px;
     overflow: hidden;
@@ -209,59 +206,8 @@ margin-bottom: 30px;
     animation: defilement2 12s linear infinite;
   }
 
-  /* @keyframes tonext {
-    75% {
-      left: 0;
-    }
-
-    95% {
-      left: 100%;
-    }
-
-    98% {
-      left: 100%;
-    }
-
-    99% {
-      left: 0;
-    }
-  }
-
-  @keyframes tostart {
-    75% {
-      left: 0;
-    }
-
-    95% {
-      left: -300%;
-    }
-
-    98% {
-      left: -300%;
-    }
-
-    99% {
-      left: 0;
-    }
-  } */
-
-  @keyframes snap {
-    96% {
-      scroll-snap-align: center;
-    }
-
-    97% {
-      scroll-snap-align: none;
-    }
-
-    99% {
-      scroll-snap-align: none;
-    }
-
-    100% {
-      scroll-snap-align: center;
-    }
-  }
+  
+  
   body {
 
     margin: 0 auto;
@@ -275,154 +221,60 @@ margin-bottom: 30px;
     scrollbar-width: none;
   }
 
-  *::-webkit-scrollbar {
-    width: 0;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background: transparent;
-    border: none;
-  }
-
-  * {
-    -ms-overflow-style: none;
-  }
-  ol,
-  li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .contact-group {
-    display: flex;
-  }
-  .carousel {
-    position: relative;
-    /* padding-top: 75%; */
-    filter: drop-shadow(0 0 10px #0003);
-    perspective: 100px;
-    width: 20%;
-    aspect-ratio: 1/1;
-    border-radius: 10%;
-    
-  }
-  .carousel__viewport {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    overflow-x: scroll;
-    counter-reset: item;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    border-radius: 10%;
-   
+  /*CAROUSEL*/
+  .contact-group{
+display: inline-flex
 
   }
-  .carousel__slide {
-    position:relative;
-    flex: 0 0 100%;
-    width: 100%;
-    background-color: var(--text);
-    counter-increment: item;
-    text-align: center;
-    background-color: white;
-    border-color: white;
-    
-    
+  .container {
+    border: 1px solid #000;
+    border-color: #EA0;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.3);
+   position: relative;
+    max-width: 400px;
+    margin-left: 40%;
+    padding: 80px;
   }
-  .carousel__slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
- 
-  .carousel__snapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    scroll-snap-align: center;
-    text-align: center;
-    
-    /* padding-top: 60px; */
-  }
-  @media (hover: hover) {
-    .carousel__snapper {
-      animation-name: tonext, snap;
-      animation-timing-function: ease;
-      animation-duration: 4s;
-      animation-iteration-count: infinite;
-    }
-    .carousel__slide:last-child .carousel__snapper {
-      animation-name: tostart, snap;
-    }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .carousel__snapper {
-      animation-name: none;
-      text-align: center;
-      background-position: center;
-
-    }
-  }
-  .carousel:hover .carousel__snapper,
-  .carousel:focus-within .carousel__snapper {
-    animation-name: none;
-  }
-  .carousel__navigation {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-    height: 2rem;
-
-  }
-  .carousel__navigation-list,
-  .carousel__navigation-item {
-    display: inline-block;
-  }
-  .carousel__navigation-button {
-    display: inline-block;
-    width: 1.3rem;
-    height: 1.3rem;
-    background-clip: content-box;
-    border: 0.30rem solid transparent;
-    border-radius: 50%;
-    font-size: 0;
-    transition: transform 0.3s;
-    background-color: var(--text);
-  }
-  .carousel::before,
-  .carousel::after,
-  .carousel__prev,
-  .carousel__next {
-    position: absolute;
-    top: 0;
-    margin-top: 37.5%;
-    width: 4rem;
-    height: 4rem;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    font-size: 0;
-    outline: 0;
   
+  .slider{
+    padding: 20px;
   }
-  .carousel::before,
-  .carousel__prev {
-    left: -1rem;
+  
+  .slider img {
+    margin: 50px auto;
+    position: relative;
+    max-width: 100%;
+    display: none;
   }
-  .carousel::after,
-  .carousel__next {
-    right: -1rem;
+  img.active {
+    display: flex;
+    animation: fade 0.8s;
+  }
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .cont-btn {
+    color: var(--text);
+    width: 100%;
+    height: auto;
+    border: 1px solid #000;
+    border-color: #EA0;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+  }
+  .btn-nav {
+   
+    color: #EA0;
+    font-size: 50px;
+    margin: 0 15px;
+    cursor: pointer;
   }
 
   /*centre d'interet*/
@@ -492,8 +344,9 @@ margin-bottom: 30px;
   }
   .SkillB {
     background-color: orangered;
-    color: var(--text);
+    color: black;
     padding: 2%;
+    margin: 3%;
     width: 80%;
     text-align: right;
     font-size: 15px;
@@ -506,8 +359,9 @@ margin-bottom: 30px;
   }
   .SkillB1 {
     background-color: rgb(6, 135, 240);
-    color: var(--text);
+    color: black;
     padding: 2%;
+    margin: 5%;
     width: 80%;
     text-align: right;
     font-size: 15px;
@@ -519,9 +373,10 @@ margin-bottom: 30px;
         border-radius: 15px;
   }
   .SkillB2 {
-    background-color: rgba(255, 238, 0, 0.795);
-    color: var(--text);
+    background-color: rgba(255, 238, 0, 0.822);
+    color: black;
     padding: 2%;
+    margin: 5%;
     width: 50%;
     text-align: right;
     font-size: 15px;
@@ -534,11 +389,20 @@ margin-bottom: 30px;
     width: 100%;
     object-fit: contain;
   }
-.ctext{
-  color: rgb(5, 104, 129);
+.ctext1{
+  color: orangered;
+  text-align: center;
+}
+.ctext2{
+  color: blue;
+  text-align: center;
+}
+.ctext3 {
+  color:rgb(255, 238, 0);
   text-align: center;
 }
 .card p{
+  
   font-weight: bold;
   text-align: center;
 }

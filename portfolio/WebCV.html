@@ -11,104 +11,77 @@
 </head>
 
 <body>
-  <!-- Information personnel et CV-->
+  <!--Changement de couleur du body-->
   <header>
-    <label for="blackTheme" class="switch">Thème noir
+    <label for="blackTheme" class="switch">Thème sombre
       <input type="radio" id="blackTheme" name="color">
     </label>
-    <label for="whiteTheme" class="switch1"> Thème blanc
+    <label for="whiteTheme" class="switch1"> Thème clair
       <input type="radio" id="whiteTheme" name="color">
     </label>
     <h1 class="TitreCV">CV de Roussel Judicaël</h1>
   </header>
-
+<!-- Information personnel et CV-->
   <section>
     <div class="photo">
-      <img src="Assets/profile.webp" alt="Ma photo de profil">
+      <img class="Profil" src="Assets/profile.webp" alt="Photo de profil">
     </div>
     <div class="prez">
       <h2>Qui suis-je ?</h2>
-      <p>En cours d'obtention du diplome de développeur web pour suivre une formation de développeur d'application par
+      <p>En cours d'obtention du diplome de développeur web pour suivre une formation de développeur d'application web par
         la suite.</p>
       <a href="#" download="#">Télécharger mon CV</a>
     </div>
     <div class="contact-group">
       <div>
         <div class="contact">
-          <h2>Informations de contact</h2>
+          <h1>Informations de contact</h1>
         </div>
         <div class="info">
-          <p>Nom : </p>
-          <p>ROUSSEL Judicaël</p>
+          <h2>Nom : </h2>
+          <h3>ROUSSEL Judicaël</h3>
         </div>
         <div class="contactflex">
-          <p>Adresse : </p>
+          <h3>Adresse : </h3>
           <p>23 Place du nouveau Canteleu 59130 Lambersart</p>
         </div>
         <div class="contactmail">
-          <p>Téléphone :</p>
+          <h3>Téléphone :</h3>
           <p>07 73 01 54 18</p>
         </div>
         <div class="contactflex">
           <p>Mail :</p>
-          <a href="mailto:?subject=Sujecttext">
+          <a class="mail" href="mailto:?subject=Sujecttext">
             Rousseljudicael@gmail.com</a>
         </div>
       </div>
       <!--carousel-->
-      <section class="carousel" aria-label="Gallery">
-        <ol class="carousel__viewport">
-          <li id="carousel__slide1" tabindex="0" class="carousel__slide">
-            <div class="carousel__snapper">
-              <a href="https://discord.com/" target="_blank"> <img src="Assets/discord-icon.png" alt=""></a>
-              <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
-              <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
-            </div>
-          </li>
-          <li>
-          <li id="carousel__slide2" tabindex="0" class="carousel__slide">
-            <div class="carousel__snapper">
-              <a href="https://fr.linkedin.com/" target="_blank"><img src="Assets/Linke.png" alt=""></a>
-              <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
-              <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
-            </div>
-          </li>
-          <li id="carousel__slide3" tabindex="0" class="carousel__slide">
-            <img src="Assets/facebook.webp" alt="">
-            <div class="carousel__snapper">
-              <a href="https://fr-fr.facebook.com/" target="_blank"><img src="Assets/facebook.webp" alt=""></a>
-              <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
-              <a href="#carousel__slide4" class="carousel__next">Go to next slide</a>
-            </div>
-          </li>
-          <li id="carousel__slide4" tabindex="0" class="carousel__slide">
-            <img src="Assets/instagram2.svg" alt="">
-            <div class="carousel__snapper">
-              <a href="https://www.instagram.com/?hl=fr" target="_blank"><img src="Assets/instagram2.svg" alt=""></a>
-              <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a>
-              <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
-            </div>
-          </li>
-        </ol>
-        <aside class="carousel__navigation">
-          <ol class="carousel__navigation-list">
-            <li class="carousel__navigation-item">
-              <a href="#carousel__slide1" class="carousel__navigation-button">Go to slide 1</a>
-            </li>
-            <li class="carousel__navigation-item">
-              <a href="#carousel__slide2" class="carousel__navigation-button">Go to slide 2</a>
-            </li>
-            <li class="carousel__navigation-item">
-              <a href="#carousel__slide3" class="carousel__navigation-button">Go to slide 3</a>
-            </li>
-            <li class="carousel__navigation-item">
-              <a href="#carousel__slide4" class="carousel__navigation-button">Go to slide 4</a>
-            </li>
-          </ol>
-        </aside>
-      </section> <!-- fin carousel-->
+      <div class="container">
+        <div class="slider">
+          <div class="discord">
+            <a href="https://discord.com/">
+              <img class="active" src="Assets/discord-icon.png" alt="logo-discord">
+            </a>
+          </div>
+          <div class="linke">
+            <a href="https://fr.linkedin.com/">
+              <img src="Assets/Linke.png" alt="Logo linkedin">
+            </a>
+          </div>
+          <div class="facebook">
+            <a href="https://fr-fr.facebook.com/">
+              <img src="Assets/facebook.webp" alt="logo-facebook">
+            </a>
+          </div>
+        </div>
+        <div class="cont-btn">
+          <div class="btn-nav left">←</div>
+          <div class="btn-nav right">→</div>
+        </div>
+      </div>
     </div>
   </section>
+       <!-- fin carousel-->
   <!--Centre d'interet-->
     <header class="comp4">
       <h2 class="Tcomp">Formation</h2>
@@ -136,7 +109,7 @@
     <ul class="card-wrapper">
       <li class="card">
         <img src="html-logo-transparent.webp" alt="l'image du logo du code HTML">
-        <h3 class="ctext">html</h3>
+        <h3 class="ctext1">html</h3>
         <p>Compétence en HTML</p>
         <div class="progressB">
           <div class="SkillB">
@@ -146,7 +119,7 @@
       </li>
       <li class="card">
         <img class="ImgC" src="Assets/css2.png" alt="l'image du logo du code css">
-        <h3 class="ctext">CSS</h3>
+        <h3 class="ctext2">CSS</h3>
         <p>Compétence en css</p>
         <div class="progressB1">
           <div class="SkillB1">
@@ -156,7 +129,7 @@
       </li>
       <li class="card">
         <img class="ImgC" src="Assets/javascript.png" alt="l'image du logo du code Javascript">
-        <h3 class="ctext">Javascript</h3>
+        <h3 class="ctext3">Javascript</h3>
         <p>compétence en Javascript</p>
         <div class="progressB2">
           <div class="SkillB2">
@@ -167,7 +140,6 @@
     </ul>
   </div>
   <footer>
-    <p>Information</p>
-    <p>© 2022-2022</p>
+    <p>information complémentaire © 2022-2022 </p>
   </footer>
 </body>

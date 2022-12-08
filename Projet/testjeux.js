@@ -34,7 +34,7 @@ class Player {
             this.width = 48
             this.height = 48
             this.position = {
-                x: world.width / 2 - this.width / 2,
+                x: world.width / 2 - this.width/ 2,
                 y: world.height - this.height - 10
             }
         }
@@ -77,27 +77,31 @@ class Player {
 
 class Alien {
     constructor(position) {
-        this.velocity = {x:0 , y:0 }
+        this.velocity = {x:0, y:0 }
         const image = new Image();
         image.src = './ghost.png';
+        console.log(position);
         image.onload =() => {
+            console.log("alien");
             this.image = image;
             this.width = 32;
             this.height = 32;
             this.position = {
-                x: position.x,
-                y: position.y
+                x:50,
+                y: 1
             }
+            console.log(this.position);
         }
     }
     draw() {
         if (this.image) {
-            console.log();
+            // console.log(this.image, this.position.x, this.position.y, this.width, this.height);
             c.drawImage(this.image, this.position.x, this.position.y, this.width, this.height)
             return
         }
     }
     update(velocity) {
+        //console.log(velocity);
         if (this.image){
             this.position.x += velocity.x;
             this.position.y += velocity.y;
@@ -167,6 +171,7 @@ class Grid {
                 }))
             }
         }
+                console.log(this.invaders);
     }
     update() {
         this.position.x += this.velocity.x;

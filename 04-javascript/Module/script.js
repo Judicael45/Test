@@ -25,7 +25,7 @@
 
 
   L'import va suivre la syntaxe suivante :
-  Le mot clef impor, suivi d'accolade, contenant l'élément ou les éléments que l'on souhaite importer (séparé d'une virgule)
+  Le mot clef import, suivi d'accolade, contenant l'élément ou les éléments que l'on souhaite importer (séparé d'une virgule)
   puis les mot chef "from" et enfin un string contenant le chemin vers le ficher à importer.
   *import {salut, coucou  } from "./Salutation.js";
   Si notre fichier contient un export default, on peut le récupérer en plaçant un nom avant les accolades.

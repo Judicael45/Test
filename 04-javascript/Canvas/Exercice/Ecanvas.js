@@ -5,11 +5,11 @@ window.addEventListener("load", () => {
     let color = document.getElementById("myColor")
     let size = document.getElementById("myRange")
 
-
+// Taille du canvas
     canvas.height = window.innerHeight
     canvas.width = window.innerWidth
 // pour changer la couleur
-    let myColor = color.value
+    let myColor = color.value0
     ctx.strokeStyle = myColor
 // pour changer la taille 
     let mySize = size.value
@@ -36,7 +36,7 @@ window.addEventListener("load", () => {
         ctx.strokeStyle = myColor
     }
 
-    // pour la taille 
+    // pour la largeur du trait
     function sizeChanger() {
         mySize = size.value
         ctx.lineWidth = mySize

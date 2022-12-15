@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV</title>
+  <script src="WebCV.js" defer></script>
+  <link rel="stylesheet" href="stylecv.css">
+</head>
+
+<body>
+  <!--Changement de couleur du body-->
+  <header>
+    <label for="blackTheme" class="switch">Thème sombre
+      <input type="radio" id="blackTheme" name="color">
+    </label>
+    <label for="whiteTheme" class="switch1"> Thème clair
+      <input type="radio" id="whiteTheme" name="color">
+    </label>
+    <h1 class="TitreCV">CV de Roussel Judicaël</h1>
+  </header>
+<!-- Information personnel et CV-->
+  <section>
+    <div class="photo">
+      <img class="Profil" src="Assets/profile.webp" alt="Photo de profil">
+    </div>
+    <div class="prez">
+      <h2>Qui suis-je ?</h2>
+      <p>En cours d'obtention du diplome de développeur web pour suivre une formation de développeur d'application web par
+        la suite.</p>
+      <a href="#" download="#">Télécharger mon CV</a>
+    </div>
+    <div class="contact-group">
+      <div>
+        <div class="contact">
+          <h1>Informations de contact</h1>
+        </div>
+        <div class="info">
+          <h2>Nom : </h2>
+          <h3>ROUSSEL Judicaël</h3>
+        </div>
+        <div class="contactflex">
+          <h3>Adresse : </h3>
+          <p>23 Place du nouveau Canteleu 59130 Lambersart</p>
+        </div>
+        <div class="contactmail">
+          <h3>Téléphone :</h3>
+          <p>07 73 01 54 18</p>
+        </div>
+        <div class="contactflex">
+          <p>Mail :</p>
+          <a class="mail" href="mailto:?subject=Sujecttext">
+            Rousseljudicael@gmail.com</a>
+        </div>
+      </div>
+      <!--carousel-->
+      <div class="container">
+        <div class="slider">
+          <div class="discord">
+            <a href="https://discord.com/">
+              <img class="active" src="Assets/discord-icon.png" alt="logo-discord">
+            </a>
+          </div>
+          <div class="linke">
+            <a href="https://fr.linkedin.com/">
+              <img src="Assets/Linke.png" alt="Logo linkedin">
+            </a>
+          </div>
+          <div class="facebook">
+            <a href="https://fr-fr.facebook.com/">
+              <img src="Assets/facebook.webp" alt="logo-facebook">
+            </a>
+          </div>
+        </div>
+        <div class="cont-btn">
+          <div class="btn-nav left">←</div>
+          <div class="btn-nav right">→</div>
+        </div>
+      </div>
+    </div>
+  </section>
+       <!-- fin carousel-->
+  <!--Centre d'interet-->
+    <header class="comp4">
+      <h2 class="Tcomp">Formation</h2>
+    </header>
+  <section class="interet">
+    <div class="exp">
+      <div class="exp-logo"></div>
+      <div class="exp-info">
+        <h3>Formation développeur web (en cours)</h3>
+        <h4>AFCI centre de formation</h4>
+        <h4>Octobre 2022 - Ajourd'hui</h4>
+      </div>
+      <div class="exp-description">
+        <p>Actuellement en formation développeur web à l'AFCI <br> nous apprenons Html/Css/Javascript/PHP/Symfony/Typescript/API platform/jQuery/WordPress </p>
+      </div>
+    </div>
+  </section>
+  <header class="comp3">
+    <!--début carte de Compétence-->
+    <div class="comp">
+      <h2 class="Tcomp">Compétence</h2>
+    </div>
+  </header>
+  <div>
+    <ul class="card-wrapper">
+      <li class="card">
+        <img src="html-logo-transparent.webp" alt="l'image du logo du code HTML">
+        <h3 class="ctext1">html</h3>
+        <p>Compétence en HTML</p>
+        <div class="progressB">
+          <div class="SkillB">
+            <p>80%</p>
+          </div>
+        </div>
+      </li>
+      <li class="card">
+        <img class="ImgC" src="Assets/css2.png" alt="l'image du logo du code css">
+        <h3 class="ctext2">CSS</h3>
+        <p>Compétence en css</p>
+        <div class="progressB1">
+          <div class="SkillB1">
+            <p>80%</p>
+          </div>
+        </div>
+      </li>
+      <li class="card">
+        <img class="ImgC" src="Assets/javascript.png" alt="l'image du logo du code Javascript">
+        <h3 class="ctext3">Javascript</h3>
+        <p>compétence en Javascript</p>
+        <div class="progressB2">
+          <div class="SkillB2">
+            <p>50%</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <footer>
+    <p>information complémentaire © 2022-2022 </p>
+  </footer>
+</body>

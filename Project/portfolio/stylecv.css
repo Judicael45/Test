@@ -8,6 +8,13 @@
     font-weight: bold;
   }
 
+  @media only screen and (max-width: 600px) {
+    /* code CSS pour les écrans de 600px ou moins ici */
+  }
+  
+  @media only screen and (min-width: 601px) and (max-width: 900px) {
+    /*  code CSS pour les écrans compris entre 601px et 900px ici */
+  }
   .switch{
     padding: 2%;
     position: relative;

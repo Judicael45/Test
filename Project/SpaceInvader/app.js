@@ -12,43 +12,51 @@ const keys = {
 
 
 
-class Player{
-    constructor(){
-        this.velocity={
-            x:0, // Vitesse de déplacement sur l'axe des X
-            y:0 // Vitesse de déplacement sur l'axe des Y
-        }
-        const image= new Image();
-        image.src = './Assets/space.png';
-        image.onload =()=>{
-            this.image = image;
-            this.width=48; // Largeur du vaisseau
-            this.height=48; // Hauteur du vaisseau
-            this.position={
-                x:world.width/2 - this.width/2, // Position sur l'axe des x
-                y:world.height - this.height -10 // Position sur l'axe des Y
-            }
-           
-        }
+class Player {
+    constructor() {
+      // Vitesse de déplacement sur l'axe des X et Y
+      this.velocity = {
+        x: 0,
+        y: 0
+      };
+  
+      // Chargement de l'image du vaisseau
+      const image = new Image();
+      image.src = "./Assets/space.png";
+      image.onload = () => {
+        this.image = image;
+        // Largeur et hauteur du vaisseau
+        this.width = 48;
+        this.height = 48;
+        // Position du vaisseau sur l'axe des X et Y
+        this.position = {
+          x: world.width / 2 - this.width / 2,
+          y: world.height - this.height - 10
+        };
+      };
     }
-
-    draw(){
-        c.drawImage(this.image,
-            this.position.x,
-            this.position.y,
-            this.width,
-            this.height
-        );
+  
+    draw() {
+      // Dessin du vaisseau à sa position actuelle
+      c.drawImage(
+        this.image,
+        this.position.x,
+        this.position.y,
+        this.width,
+        this.height
+      );
     }
-
-    shoot(){
-        missiles.push(new Missile({
-            position:{
-                x:this.position.x + this.width/2,
-                y:this.position.y
-            },
-            
-        }));
+  
+    shoot() {
+      // Création d'un nouveau missile à partir de la position du vaisseau
+      missiles.push(
+        new Missile({
+          position: {
+            x: this.position.x + this.width / 2,
+            y: this.position.y
+          }
+        })
+      );
     }
   
    update(){
@@ -65,53 +73,73 @@ class Player{
         }
     }
 } 
-class Alien{
-    constructor({position}){
-        this.velocity={x:0, y:0 }
-        const image= new Image();
-        image.src = './Assets/ghost.png';
-        image.onload =()=>{
-            this.image = image;
-            this.width=32;
-            this.height=32  ;
-            this.position= {
-                x:position.x,
-                y:position.y
-            }
-        }
-        
+class Alien {
+    constructor({ position }) {
+      // Vitesse de déplacement sur l'axe des X et Y
+      this.velocity = { x: 0, y: 0 };
+  
+      // Chargement de l'image de l'alien
+      const image = new Image();
+      image.src = "./Assets/ghost.png";
+      image.onload = () => {
+        this.image = image;
+        // Largeur et hauteur de l'alien
+        this.width = 32;
+        this.height = 32;
+        // Position de l'alien sur l'axe des X et Y
+        this.position = {
+          x: position.x,
+          y: position.y
+        };
+      };
     }
-    draw(){
-        if(this.image){
-        c.drawImage(this.image,this.position.x,this.position.y,this.width,this.height,);       
-        }
+  
+    draw() {
+      // Dessin de l'alien à sa position actuelle, si l'image est chargée
+      if (this.image) {
+        c.drawImage(
+          this.image,
+          this.position.x,
+          this.position.y,
+          this.width,
+          this.height
+        );
+      }
     }
-
-    update({velocity}){
-        if(this.image){
+  
+    update({ velocity }) {
+      // Mise à jour de la position de l'alien en fonction de sa vitesse, si l'image est chargée
+      if (this.image) {
         this.position.x += velocity.x;
         this.position.y += velocity.y;
-        if(this.position.y + this.height >= world.height){
-            console.log('You loose');
+        // Si l'alien atteint le bas de l'écran, on affiche un message de défaite
+        if (this.position.y + this.height >= world.height) {
+          console.log("You loose");
         }
-        }
-        this.draw();
+      }
+  
+      // Dessin de l'alien à sa nouvelle position
+      this.draw();
     }
-    shoot(alienMissiles){
-        if(this.position){
-            alienMissiles.push(new alienMissile({
-                position:{
-                    x:this.position.x,
-                    y:this.position.y
-                },
-                velocity:{
-                    x:0,
-                    y:3
-                }
-            }))
-        }
+  
+    shoot(alienMissiles) {
+      // Création d'un nouveau missile ennemi à partir de la position de l'alien, si celle-ci est définie
+      if (this.position) {
+        alienMissiles.push(
+          new AlienMissile({
+            position: {
+              x: this.position.x,
+              y: this.position.y
+            },
+            velocity: {
+              x: 0,
+              y: 3
+            }
+          })
+        );
+      }
     }
-}
+  }
 
 class Missile{
     constructor({position}){

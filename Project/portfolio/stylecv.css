@@ -7,52 +7,60 @@
     box-sizing: border-box;
     font-weight: bold;
   }
- 
+
 
   @media only screen and (max-width: 600px) {
     /* code CSS pour les écrans de 600px ou moins ici */
-    
+
   }
-  
+
   @media only screen and (min-width: 601px) and (max-width: 900px) {
     /*  code CSS pour les écrans compris entre 601px et 900px ici */
   }
-  .switch{
+
+  .switch {
     padding: 2%;
     position: relative;
     color: var(--font)
-   }
-   .switch1{
+  }
+
+  .switch1 {
     position: relative;
     color: var(--font)
-   }
- 
- 
+  }
 
-header label input {
-  display: inline-table;
-position: relative;
-margin-bottom: 30px;
-}
+
+
+  header label input {
+    display: inline-table;
+    position: relative;
+    margin-bottom: 30px;
+  }
+
   .TitreCV {
     color: #EA0;
   }
+
   :root {
     --font: rgb(20, 20, 20);
     --text: #B3dee5;
   }
-  body{
+
+  body {
     background-color: var(--font);
     color: var(--text);
   }
+
   p {
     font-size: 16px;
     line-height: 24px;
   }
+
   a {
     text-decoration: none;
     color: var(--text)
   }
+
   /*HEADER & FOOTER*/
   header {
     margin: 0 auto;
@@ -63,13 +71,13 @@ margin-bottom: 30px;
     background-image: url(Assets/HeaderW.jpg);
     border-radius: 10px;
   }
-  
+
   @media (max-width: 600px) {
     header {
       background-size: cover;
     }
   }
-  
+
   .header h1 {
     color: #b3dee5;
     font-size: 24px;
@@ -77,47 +85,52 @@ margin-bottom: 30px;
     width: 90%;
     margin: 0 auto;
   }
+
   .Tcomp {
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
+
   .comp3,
-.comp4 {
-  margin: 20px auto;
-  width: 90%;
-  height: 25%;
-  display: inline-block;
-  border-radius: 10px;
-}
-.interet {
-  margin: 0 auto;
-  width: 90%;
-  border-radius: 10px;
-}
-footer {
-  margin: 0 auto;
-  width: 90%;
-  border-radius: 10px;
-  border-top: 2px solid var(--text);
-}
+  .comp4 {
+    margin: 20px auto;
+    width: 90%;
+    height: 25%;
+    display: inline-block;
+    border-radius: 10px;
+  }
 
-footer p {
-  width: 90%;
-  margin: 0 auto;
-  color: var(--text);
-  text-align: center;
-}
+  .interet {
+    margin: 0 auto;
+    width: 90%;
+    border-radius: 10px;
+  }
 
-footer a {
-  color: var(--text);
-}
-@media only screen and (max-width: 600px) {
-  /* code CSS pour les écrans de 600px ou moins ici */
-}
+  footer {
+    margin: 0 auto;
+    width: 90%;
+    border-radius: 10px;
+    border-top: 2px solid var(--text);
+  }
 
-@media only screen and (min-width: 601px) and (max-width: 900px) {
-  /* code CSS pour les écrans compris entre 601px et 900px ici */
-}
+  footer p {
+    width: 90%;
+    margin: 0 auto;
+    color: var(--text);
+    text-align: center;
+  }
+
+  footer a {
+    color: var(--text);
+  }
+
+  @media only screen and (max-width: 600px) {
+    /* code CSS pour les écrans de 600px ou moins ici */
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 900px) {
+    /* code CSS pour les écrans compris entre 601px et 900px ici */
+  }
 
   /*SECTIONS*/
   section {
@@ -129,38 +142,39 @@ footer a {
     margin: 20px auto;
     box-shadow: 0px 0px 10px;
   }
-  
+
   @media (max-width: 768px) {
     section {
       flex-flow: column;
     }
   }
-  
+
   section h2 {
     margin: 20px 0;
     width: 90%;
   }
-  
+
   @media (max-width: 768px) {
     section h2 {
       width: 100%;
     }
   }
-  
-  section > div {
+
+  section>div {
     width: 90%;
   }
-  
+
   @media (max-width: 768px) {
-    section > div {
+    section>div {
       width: 100%;
     }
   }
+
   /*SECTION INFOS*/
   .photo {
     text-align: center;
   }
-  
+
   .photo .Profil {
     width: 150px;
     height: 150px;
@@ -169,16 +183,16 @@ footer a {
     border-radius: 50%;
     margin-top: -80px;
   }
-  
+
   .prez {
     border-bottom: 2px dashed;
   }
-  
+
   .mail {
     color: rgb(69, 69, 247);
     text-decoration: underline;
   }
-  
+
   .prez a {
     display: block;
     text-align: center;
@@ -189,39 +203,42 @@ footer a {
     box-shadow: 0px 0px 10px;
     border-radius: 5px;
   }
-  
+
   .contact-flex {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
   }
-  
+
   .contact-flex p:first-child {
     flex: 0 0 40%;
   }
-  
+
   .contact-flex p:last-child {
     flex: 0 0 60%;
   }
-  
+
   @media (max-width: 960px) {
     .contact-flex {
       flex-flow: column;
     }
+
     .contact-flex p:first-child {
       flex: 0 0 auto;
     }
+
     .contact-flex p:last-child {
       flex: 0 0 auto;
     }
   }
-  
+
   .conteneur1 {
     overflow: hidden;
     max-width: 960px;
     margin: 50px auto;
     box-shadow: 0px 15px 10px -5px;
   }
+
   .d1 {
     width: 100%;
     height: 100%;
@@ -229,21 +246,21 @@ footer a {
     background-size: contain;
     animation: defilement1 12s linear infinite;
   }
-  
+
   @media (min-width: 3840px) {
     .d1 {
       width: 3840px;
       height: 720px;
     }
   }
-  
+
   .conteneur2 {
     max-width: 960px;
     overflow: hidden;
     margin: 50px auto;
     box-shadow: 0px 0px 10px;
   }
-  
+
   .d2 {
     width: 100%;
     height: 0;
@@ -252,7 +269,7 @@ footer a {
     background-size: contain;
     animation: defilement2 12s linear infinite;
   }
-  
+
   @media (min-width: 960px) {
     .d2 {
       width: 400%;
@@ -260,23 +277,24 @@ footer a {
       padding-top: 75%;
     }
   }
-  
+
   body {
     margin: 0 auto;
     font-family: "Lato", sans-serif;
     text-align: center;
   }
-  
+
   * {
     box-sizing: border-box;
     scrollbar-color: transparent transparent;
     scrollbar-width: none;
   }
+
   /*CAROUSEL*/
   .contact-group {
     display: inline-flex;
   }
-  
+
   .container {
     border: 1px solid #000;
     border-color: #EA0;
@@ -286,48 +304,45 @@ footer a {
     margin-left: 40%;
     padding: 80px;
   }
-  
+
   @media (max-width: 400px) {
     .container {
       margin-left: 0;
     }
   }
-  
+
   .slider {
-    
+
     padding: 20px;
   }
-  
+
   .slider img {
-         height:15rem;
-         width:20rem;
-        object-fit:cover;
-        display: block;
-        height:15rem;
-        width:20rem;
-       object-fit:cover;
-        object-position: center center;
+    height: 15rem;
+    width: 15rem;
+    object-fit: cover;
+    object-position: center center;
     margin: 50px auto;
     position: relative;
     max-width: 100%;
     display: none;
   }
-  
+
   img.active {
-    
+
     display: flex;
     animation: fade 0.8s;
   }
-  
+
   @keyframes fade {
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
   }
-  
+
   .cont-btn {
     color: var(--text);
     width: 100%;
@@ -339,13 +354,14 @@ footer a {
     justify-content: center;
     border-radius: 10px;
   }
-  
+
   .btn-nav {
     color: #EA0;
     font-size: 50px;
     margin: 0 15px;
     cursor: pointer;
   }
+
   /*centre d'interet*/
 
   .exp {
@@ -355,16 +371,17 @@ footer a {
     padding-bottom: 20px;
     margin-top: 10px;
   }
-  
+
   .exp-logo {
     flex: 0 0 25%;
     max-width: 100px;
   }
-  
+
   @media (max-width: 800px) {
     .exp {
       flex-flow: column;
     }
+
     .exp-logo {
       flex: 0 0 auto;
     }
@@ -373,13 +390,14 @@ footer a {
 
   /*groupe de carte compétence*/
   .card {
-    margin-top:10%;
+    margin-top: 10%;
     border-radius: 0.5rem;
     box-shadow: 0.05rem 0.1rem 0.3rem -03rem rgba(0, 0, 0, 0.45);
-    padding-bottom:1rem;
-   
+    padding-bottom: 1rem;
+
     overflow: hidden;
   }
+
   .card {
     margin-top: 10%;
     border-radius: 0.5rem;
@@ -387,7 +405,7 @@ footer a {
     padding-bottom: 1rem;
     overflow: hidden;
   }
-  
+
   img {
     border-radius: 0.5rem 0.5rem 0 0;
     width: 100%;
@@ -396,7 +414,7 @@ footer a {
     aspect-ratio: 4/3;
     mix-blend-mode: var(--card-blend-mode);
   }
-  
+
   body {
     display: inline-block;
     width: 100%;
@@ -410,6 +428,7 @@ footer a {
     font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
       helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
   }
+
   .card-wrapper {
     margin: 0 auto;
     list-style: none;
@@ -419,13 +438,13 @@ footer a {
     max-width: 100%;
     padding: 1rem;
   }
-  
+
   .progressB {
     margin: 5px;
     width: 98%;
     border-radius: 15px;
   }
-  
+
   .SkillB {
     background-color: orangered;
     color: black;
@@ -436,13 +455,13 @@ footer a {
     font-size: 15px;
     border-radius: 15px;
   }
-  
+
   .progressB1 {
     margin: 10px;
     width: 98%;
     border-radius: 15px;
   }
-  
+
   .SkillB1 {
     background-color: rgb(6, 135, 240);
     color: black;
@@ -453,13 +472,13 @@ footer a {
     font-size: 15px;
     border-radius: 15px;
   }
-  
+
   .progressB2 {
     margin: 10px;
     width: 98%;
     border-radius: 15px;
   }
-  
+
   .SkillB2 {
     background-color: rgba(255, 238, 0, 0.822);
     color: black;
@@ -470,7 +489,7 @@ footer a {
     font-size: 15px;
     border-radius: 15px;
   }
-  
+
   .ImgC {
     position: relative;
     display: flex;
@@ -478,49 +497,50 @@ footer a {
     max-width: 100%;
     object-fit: contain;
   }
-  
+
   .ctext1 {
     color: orangered;
     text-align: center;
   }
-  
+
   .ctext2 {
     color: blue;
     text-align: center;
   }
-  
+
   .ctext3 {
     color: rgb(255, 238, 0);
     text-align: center;
   }
-.card p {
-  font-weight: bold;
-  text-align: center;
-}
 
-footer {
-  max-width: 100%;
-  background: url("Assets/profile.webp") #4f4f4f;
-  box-shadow: 0px 0px 15px #333;
-  background-image: url(Assets/HeaderW.jpg);
-  height: 120px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  padding: 0;
-  margin-top: 30px;
-  text-align: center;
-  box-sizing: border-box;
-  font-weight: bold;
-  border-color: #0003;
-  border-radius: 10px;
-}
-
-footer p {
-  position: relative;
-  margin-top: 3%;
-}
-
-@media (max-width: 600px) {
-  footer {
-    background-size: cover;
+  .card p {
+    font-weight: bold;
+    text-align: center;
   }
-}
+
+  footer {
+    max-width: 100%;
+    background: url("Assets/profile.webp") #4f4f4f;
+    box-shadow: 0px 0px 15px #333;
+    background-image: url(Assets/HeaderW.jpg);
+    height: 120px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0;
+    margin-top: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: bold;
+    border-color: #0003;
+    border-radius: 10px;
+  }
+
+  footer p {
+    position: relative;
+    margin-top: 3%;
+  }
+
+  @media (max-width: 600px) {
+    footer {
+      background-size: cover;
+    }
+  }

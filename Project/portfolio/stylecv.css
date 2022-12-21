@@ -384,7 +384,7 @@
   /*centre d'interet*/
 
   .exp {
-    display: flex;
+    display: grid;
     flex-flow: row wrap;
     border-bottom: 1px solid #bbb;
     padding-bottom: 20px;
@@ -398,7 +398,7 @@
 
   @media (max-width: 800px) {
     .exp {
-      display: flex;
+      
       flex-flow: column;
     }
 

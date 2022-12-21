@@ -3,20 +3,13 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 0px;
     margin: 0px;
-    text-align: justify;
+    text-align: left;
     box-sizing: border-box;
     font-weight: bold;
   }
 
 
-  @media only screen and (max-width: 600px) {
-    /* code CSS pour les écrans de 600px ou moins ici */
 
-  }
-
-  @media only screen and (min-width: 601px) and (max-width: 900px) {
-    /*  code CSS pour les écrans compris entre 601px et 900px ici */
-  }
 
   .switch {
     padding: 2%;
@@ -76,11 +69,7 @@
     border-radius: 10px;
   }
 
-  @media (max-width: 600px) {
-    header {
-      background-size: cover;
-    }
-  }
+  
 
   .header h1 {
     color: #b3dee5;
@@ -128,17 +117,10 @@
   }
 
   footer a {
-    display: flex;
     color: var(--text);
   }
 
-  @media only screen and (max-width: 600px) {
-    /* code CSS pour les écrans de 600px ou moins ici */
-  }
-
-  @media only screen and (min-width: 601px) and (max-width: 900px) {
-    /* code CSS pour les écrans compris entre 601px et 900px ici */
-  }
+  
 
   /*SECTIONS*/
   section {
@@ -151,45 +133,30 @@
     box-shadow: 0px 0px 10px;
   }
 
-  @media (max-width: 768px) {
-    section {
-      flex-flow: column;
-    }
-  }
+  
 
   section h2 {
     margin: 20px 0;
     width: 90%;
   }
 
-  @media (max-width: 768px) {
-    section h2 {
-      width: 100%;
-    }
-  }
+
 
   section>div {
     width: 90%;
   }
 
-  @media (max-width: 768px) {
-    section>div {
-      width: 100%;
-    }
-  }
+  
 
   /*SECTION INFOS*/
   .photo {
-    display: flex;
     text-align: center;
     padding-left: 40%;
   }
 
   .photo .Profil {
-    display: flex;
-    position: relative;
-    width: 200px;
-    height: 200px;
+    width: 13rem;
+    aspect-ratio: 1/1;
     border: 3px solid #EA0;
     box-shadow: 0px 0px 10px #EA0;
     border-radius: 50%;
@@ -230,22 +197,9 @@
     flex: 0 0 60%;
   }
 
-  @media (max-width: 960px) {
-    .contact-flex {
-      flex-flow: column;
-    }
-
-    .contact-flex p:first-child {
-      flex: 0 0 auto;
-    }
-
-    .contact-flex p:last-child {
-      flex: 0 0 auto;
-    }
-  }
+  
 
   .conteneur1 {
-    display: flex;
     overflow: hidden;
     max-width: 960px;
     margin: 50px auto;
@@ -253,7 +207,6 @@
   }
 
   .d1 {
-    display: flex;
     width: 100%;
     height: 100%;
     background-image: url("https://www.pierre-giraud.com/wp-content/uploads/2019/07/diapo123.png");
@@ -261,13 +214,7 @@
     animation: defilement1 12s linear infinite;
   }
 
-  @media (min-width: 3840px) {
-    .d1 {
-      display: flex;
-      width: 3840px;
-      height: 720px;
-    }
-  }
+  
 
   .conteneur2 {
     max-width: 960px;
@@ -285,17 +232,10 @@
     animation: defilement2 12s linear infinite;
   }
 
-  @media (min-width: 960px) {
-    .d2 {
-      display: flex;
-      width: 400%;
-      height: 0;
-      padding-top: 75%;
-    }
-  }
+  
 
   body {
-    display: flex;
+    display: flex ;
     margin: 0 auto;
     font-family: "Lato", sans-serif;
     text-align: center;
@@ -310,10 +250,9 @@
   /*CAROUSEL*/
   .contact-group {
     float: left;
-    display: flex;
+    display: inline-flex;
   }
   .container {
-    display: grid;
     float: right;
     position: relative;
     max-width: 400px;
@@ -321,22 +260,18 @@
     padding: 0px;
   }
 
-  @media (max-width: 400px) {
-    .container {
-      margin-left: 0;
-    }
-  }
 
   .slider {
-    display: flex;
+
     padding: 20px;
   }
 
   .slider img {
-    height: 15rem;
+    aspect-ratio: 1/1;
+    
     width: 15rem;
     object-fit: cover;
-    object-position: center center;
+    object-position: center;
     margin: 50px auto;
     position: relative;
     max-width: 100%;
@@ -351,18 +286,15 @@
 
   @keyframes fade {
     from {
-      display: flex;
       opacity: 0;
     }
 
     to {
-      display: flex;
       opacity: 1;
     }
   }
 
   .cont-btn {
-    display: flex;
     color: var(--text);
     width: 100%;
     height: auto;
@@ -374,7 +306,6 @@
   }
 
   .btn-nav {
-    display: flex;
     color: #EA0;
     font-size: 50px;
     margin: 0 15px;
@@ -384,7 +315,6 @@
   /*centre d'interet*/
 
   .exp {
-    display: grid;
     flex-flow: row wrap;
     border-bottom: 1px solid #bbb;
     padding-bottom: 20px;
@@ -396,22 +326,11 @@
     max-width: 100px;
   }
 
-  @media (max-width: 800px) {
-    .exp {
-      
-      flex-flow: column;
-    }
-
-    .exp-logo {
-      display: flex;
-      flex: 0 0 auto;
-    }
-  }
+  
 
 
   /*groupe de carte compétence*/
   .card {
-    
     margin-left: auto;
   margin-right: auto;
     margin-top: 10%;
@@ -447,7 +366,7 @@
     min-height: 100vh;
     margin-left: auto;
     margin-right: auto;
-    padding: 1rem;
+    padding: 0.3rem;
     line-height: 1.5;
     font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
       helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
@@ -515,7 +434,6 @@
   }
 
   .ImgC {
-    display: flex;
     position: relative;
     display: flex;
     perspective: 100px;
@@ -544,13 +462,11 @@
   }
 
   footer {
-    display: flex;
     max-width: 100%;
     background: url("Assets/profile.webp") #4f4f4f;
     box-shadow: 0px 0px 15px #333;
     background-image: url(Assets/HeaderW.jpg);
     height: 120px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 0;
     margin-top: 30px;
     text-align: center;
@@ -561,13 +477,18 @@
   }
 
   footer p {
-    display: grid;
     position: relative;
     margin-top: 3%;
   }
-
-  @media (max-width: 600px) {
-    footer {
-      background-size: cover;
+  @media screen and (max-width: 400px) {
+    .container {
+      margin-left: 0;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .photo .Profil {
+      width: 5rem;
+      height: 5rem;
+      margin-top: -2.5rem
     }
   }

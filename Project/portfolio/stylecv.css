@@ -38,6 +38,7 @@
   }
 
   .TitreCV {
+    display: flex;
     margin: 1%;
     color: #EA0;
   }
@@ -48,11 +49,13 @@
   }
 
   body {
+    display: flex;
     background-color: var(--font);
     color: var(--text);
   }
 
   p {
+    
     font-size: 16px;
     line-height: 24px;
   }
@@ -93,6 +96,7 @@
 
   .comp3,
   .comp4 {
+    display: flex;
     margin: 20px auto;
     width: 100%;
     height: 25%;
@@ -101,6 +105,7 @@
   }
 
   .interet {
+    display: flex;
     position: relative;
     margin: 0 auto;
     width: 90%;
@@ -108,6 +113,7 @@
   }
 
   footer {
+    display: flex;
     margin: 0 auto;
     width: 100%;
     border-radius: 10px;
@@ -122,6 +128,7 @@
   }
 
   footer a {
+    display: flex;
     color: var(--text);
   }
 
@@ -173,11 +180,13 @@
 
   /*SECTION INFOS*/
   .photo {
+    display: flex;
     text-align: center;
     padding-left: 40%;
   }
 
   .photo .Profil {
+    display: flex;
     position: relative;
     width: 200px;
     height: 200px;
@@ -236,6 +245,7 @@
   }
 
   .conteneur1 {
+    display: flex;
     overflow: hidden;
     max-width: 960px;
     margin: 50px auto;
@@ -243,6 +253,7 @@
   }
 
   .d1 {
+    display: flex;
     width: 100%;
     height: 100%;
     background-image: url("https://www.pierre-giraud.com/wp-content/uploads/2019/07/diapo123.png");
@@ -252,6 +263,7 @@
 
   @media (min-width: 3840px) {
     .d1 {
+      display: flex;
       width: 3840px;
       height: 720px;
     }
@@ -275,6 +287,7 @@
 
   @media (min-width: 960px) {
     .d2 {
+      display: flex;
       width: 400%;
       height: 0;
       padding-top: 75%;
@@ -282,6 +295,7 @@
   }
 
   body {
+    display: flex;
     margin: 0 auto;
     font-family: "Lato", sans-serif;
     text-align: center;
@@ -295,9 +309,12 @@
 
   /*CAROUSEL*/
   .contact-group {
-    display: inline-flex;
+    float: left;
+    display: flex;
   }
   .container {
+    display: inline-flex;
+    float: right;
     position: relative;
     max-width: 400px;
     margin-left: 30%;
@@ -311,7 +328,7 @@
   }
 
   .slider {
-
+    display: flex;
     padding: 20px;
   }
 
@@ -334,15 +351,18 @@
 
   @keyframes fade {
     from {
+      display: flex;
       opacity: 0;
     }
 
     to {
+      display: flex;
       opacity: 1;
     }
   }
 
   .cont-btn {
+    display: flex;
     color: var(--text);
     width: 100%;
     height: auto;
@@ -354,6 +374,7 @@
   }
 
   .btn-nav {
+    display: flex;
     color: #EA0;
     font-size: 50px;
     margin: 0 15px;
@@ -363,6 +384,7 @@
   /*centre d'interet*/
 
   .exp {
+    display: flex;
     flex-flow: row wrap;
     border-bottom: 1px solid #bbb;
     padding-bottom: 20px;
@@ -376,10 +398,12 @@
 
   @media (max-width: 800px) {
     .exp {
+      display: flex;
       flex-flow: column;
     }
 
     .exp-logo {
+      display: flex;
       flex: 0 0 auto;
     }
   }
@@ -387,6 +411,7 @@
 
   /*groupe de carte compétence*/
   .card {
+    
     margin-left: auto;
   margin-right: auto;
     margin-top: 10%;
@@ -490,6 +515,7 @@
   }
 
   .ImgC {
+    display: flex;
     position: relative;
     display: flex;
     perspective: 100px;
@@ -518,6 +544,7 @@
   }
 
   footer {
+    display: flex;
     max-width: 100%;
     background: url("Assets/profile.webp") #4f4f4f;
     box-shadow: 0px 0px 15px #333;
@@ -534,6 +561,7 @@
   }
 
   footer p {
+    display: grid;
     position: relative;
     margin-top: 3%;
   }

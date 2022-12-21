@@ -38,6 +38,7 @@
   }
 
   .TitreCV {
+    margin: 1%;
     color: #EA0;
   }
 
@@ -57,12 +58,12 @@
   }
 
   a {
-    text-decoration: none;
-    color: var(--text)
+   width: 100%;
   }
 
   /*HEADER & FOOTER*/
   header {
+    width: 100%;
     margin: 0 auto;
     border-radius: 10%;
     padding: 20px 0;
@@ -88,19 +89,19 @@
 
   .Tcomp {
     text-align: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
 
   .comp3,
   .comp4 {
     margin: 20px auto;
-    width: 90%;
+    width: 100%;
     height: 25%;
     display: inline-block;
     border-radius: 10px;
   }
 
   .interet {
+    position: relative;
     margin: 0 auto;
     width: 90%;
     border-radius: 10px;
@@ -108,7 +109,7 @@
 
   footer {
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
     border-radius: 10px;
     border-top: 2px solid var(--text);
   }
@@ -173,11 +174,13 @@
   /*SECTION INFOS*/
   .photo {
     text-align: center;
+    padding-left: 40%;
   }
 
   .photo .Profil {
-    width: 150px;
-    height: 150px;
+    position: relative;
+    width: 200px;
+    height: 200px;
     border: 3px solid #EA0;
     box-shadow: 0px 0px 10px #EA0;
     border-radius: 50%;
@@ -294,15 +297,11 @@
   .contact-group {
     display: inline-flex;
   }
-
   .container {
-    border: 1px solid #000;
-    border-color: #EA0;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
     position: relative;
     max-width: 400px;
-    margin-left: 40%;
-    padding: 80px;
+    margin-left: 30%;
+    padding: 0px;
   }
 
   @media (max-width: 400px) {
@@ -347,9 +346,8 @@
     color: var(--text);
     width: 100%;
     height: auto;
-    border: 1px solid #000;
-    border-color: #EA0;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    
+    
     display: flex;
     justify-content: center;
     border-radius: 10px;
@@ -365,7 +363,6 @@
   /*centre d'interet*/
 
   .exp {
-    display: inline-flex;
     flex-flow: row wrap;
     border-bottom: 1px solid #bbb;
     padding-bottom: 20px;
@@ -390,6 +387,8 @@
 
   /*groupe de carte compétence*/
   .card {
+    margin-left: auto;
+  margin-right: auto;
     margin-top: 10%;
     border-radius: 0.5rem;
     box-shadow: 0.05rem 0.1rem 0.3rem -03rem rgba(0, 0, 0, 0.45);

@@ -1,6 +1,6 @@
 import { Component,OnInit, } from '@angular/core';
-import {Recette} from "./Recette"
-import { RECETTES } from "./RecetteList";
+import {Recette} from "./recette/Recette"
+import { RECETTES } from "./recette/RecetteList";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

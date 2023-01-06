@@ -13,12 +13,12 @@
   .switch {
     padding: 2%;
     position: relative;
-    color: var(--font)
+    color: black
   }
 
   .switch1 {
     position: relative;
-    color: var(--font)
+    color: whitesmoke;
   }
 
 
@@ -32,12 +32,12 @@
   .TitreCV {
     display: flex;
     margin: 1%;
-    color: #E0BE38;
+    color: rgb(241, 201, 99);
   }
 
   :root {
     --font: rgb(20, 20, 20);
-    --text: #E0BE38;
+    --text: #8337A6;
   }
 
   body {
@@ -156,8 +156,8 @@
   .photo .Profil {
     width: 13rem;
     aspect-ratio: 1/1;
-    border: 3px solid rgb(69, 69, 247);
-    box-shadow: 0px 0px 10px rgb(69, 69, 247);
+    border: 3px solid rgb(241, 201, 99);
+    box-shadow: 0px 0px 10px rgb(241, 201, 99);
     border-radius: 50%;
     margin-top: -80px;
   }
@@ -177,7 +177,7 @@
     padding: 10px;
     margin: 10px auto 30px auto;
     color: rgb(69, 69, 247);
-    background-color: #EA0;
+    background-color: rgb(241, 201, 99);
     box-shadow: 0px 0px 10px var(--text);
     border-radius: 5px;
   }

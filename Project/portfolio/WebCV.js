@@ -8,20 +8,20 @@ white.addEventListener("input",changeTheme2);
 function changeTheme2() {
     if (black.checked) {
         document.documentElement.style.setProperty("--font", "rgb(20, 20, 20)")//Thème Noir
-        document.documentElement.style.setProperty("--text", "#E0BE38")//Thème blanc
+        document.documentElement.style.setProperty("--text", "#8337A6")//Thème blanc
         localStorage.setItem("theme", "rgb(20, 20, 20)")
         black.checked = true
     }
     else if(white.checked){
-        document.documentElement.style.setProperty("--font", "#E0BE38")
+        document.documentElement.style.setProperty("--font", "#8337A6")
         document.documentElement.style.setProperty("--text", "rgb(20, 20, 20)")
-        localStorage.setItem("theme", "#E0BE38")
+        localStorage.setItem("theme", "#8337A6")
         
     }
 }
 
 black.checked = localStorage.getItem("theme") === "rgb(20, 20, 20)"
-white.checked = localStorage.getItem("theme") === "#E0BE38"
+white.checked = localStorage.getItem("theme") === "#8337A6"
 
 // fin de changement de coueur body 
 

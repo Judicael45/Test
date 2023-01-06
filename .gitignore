@@ -1,3 +1,5 @@
-node_modules/
+*.zip
 *.mp4
+*.mpeg
+node_modules/
 vendor/

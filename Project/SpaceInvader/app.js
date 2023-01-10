@@ -3,261 +3,264 @@ const c = world.getContext('2d');
 world.width = world.clientWidth;
 world.height = world.clientHeight;
 
-let frames=0;
+let frames = 0;
 const keys = {
-    ArrowLeft:{pessed:false},
-    ArrowRight:{pressed:false},
-    fired:{ pressed:false}
+    ArrowLeft: { pessed: false },
+    ArrowRight: { pressed: false },
+    fired: { pressed: false }
 }
 
 
 
 class Player {
     constructor() {
-      // Vitesse de déplacement sur l'axe des X et Y
-      this.velocity = {
-        x: 0,
-        y: 0
-      };
-  
-      // Chargement de l'image du vaisseau
-      const image = new Image();
-      image.src = "./Assets/space.png";
-      image.onload = () => {
-        this.image = image;
-        // Largeur et hauteur du vaisseau
-        this.width = 48;
-        this.height = 48;
-        // Position du vaisseau sur l'axe des X et Y
-        this.position = {
-          x: world.width / 2 - this.width / 2,
-          y: world.height - this.height - 10
+        // Vitesse de déplacement sur l'axe des X et Y
+        this.velocity = {
+            x: 0,
+            y: 0
         };
-      };
+
+        // Chargement de l'image du vaisseau
+        const image = new Image();
+        image.src = "./Assets/space.png";
+        image.onload = () => {
+            this.image = image;
+            // Largeur et hauteur du vaisseau
+            this.width = 48;
+            this.height = 48;
+            // Position du vaisseau sur l'axe des X et Y
+            this.position = {
+                x: world.width / 2 - this.width / 2,
+                y: world.height - this.height - 10
+            };
+        };
     }
-  
+
     draw() {
-      // Dessin du vaisseau à sa position actuelle
-      c.drawImage(
-        this.image,
-        this.position.x,
-        this.position.y,
-        this.width,
-        this.height
-      );
+        // Dessin du vaisseau à sa position actuelle
+        c.drawImage(
+            this.image,
+            this.position.x,
+            this.position.y,
+            this.width,
+            this.height
+            
+        );
     }
-  
+
     shoot() {
-      // Création d'un nouveau missile à partir de la position du vaisseau
-      missiles.push(
-        new Missile({
-          position: {
-            x: this.position.x + this.width / 2,
-            y: this.position.y
-          }
-        })
-      );
+        // Création d'un nouveau missile à partir de la position du vaisseau
+        missiles.push(
+            new Missile({
+                position: {
+                    x: this.position.x + this.width / 2,
+                    y: this.position.y
+                }
+            })
+        );
     }
-  
-   update(){
-        if(this.image){
-            if(keys.ArrowLeft.pressed && this.position.x >=0){
-            this.velocity.x = -5;
-        }
-        else if(keys.ArrowRight.pressed && this.position.x <= world.width - this.width){
-            this.velocity.x = 5;
-        }
-        else{this.velocity.x =0;}
-        this.position.x += this.velocity.x;
-        this.draw();
+
+    update() {
+        if (this.image) {
+            if (keys.ArrowLeft.pressed && this.position.x >= 0) {
+                this.velocity.x = -5;
+            }
+            else if (keys.ArrowRight.pressed && this.position.x <= world.width - this.width) {
+                this.velocity.x = 5;
+            }
+            else { this.velocity.x = 0; }
+            this.position.x += this.velocity.x;
+            this.draw();
+            
         }
     }
-} 
+}
 class Alien {
     constructor({ position }) {
-      // Vitesse de déplacement sur l'axe des X et Y
-      this.velocity = { x: 0, y: 0 };
-  
-      // Chargement de l'image de l'alien
-      const image = new Image();
-      image.src = "./Assets/ghost.png";
-      image.onload = () => {
-        this.image = image;
-        // Largeur et hauteur de l'alien
-        this.width = 32;
-        this.height = 32;
-        // Position de l'alien sur l'axe des X et Y
-        this.position = {
-          x: position.x,
-          y: position.y
-        };
-      };
-    }
-  
-    draw() {
-      // Dessin de l'alien à sa position actuelle, si l'image est chargée
-      if (this.image) {
-        c.drawImage(
-          this.image,
-          this.position.x,
-          this.position.y,
-          this.width,
-          this.height
-        );
-      }
-    }
-  
-    update({ velocity }) {
-      // Mise à jour de la position de l'alien en fonction de sa vitesse, si l'image est chargée
-      if (this.image) {
-        this.position.x += velocity.x;
-        this.position.y += velocity.y;
-        // Si l'alien atteint le bas de l'écran, on affiche un message de défaite
-        if (this.position.y + this.height >= world.height) {
-          console.log("You loose");
-        }
-      }
-  
-      // Dessin de l'alien à sa nouvelle position
-      this.draw();
-    }
-  
-    shoot(alienMissiles) {
-      // Création d'un nouveau missile ennemi à partir de la position de l'alien, si celle-ci est définie
-      if (this.position) {
-        alienMissiles.push(
-          new AlienMissile({
-            position: {
-              x: this.position.x,
-              y: this.position.y
-            },
-            velocity: {
-              x: 0,
-              y: 3
-            }
-          })
-        );
-      }
-    }
-  }
+        // Vitesse de déplacement sur l'axe des X et Y
+        this.velocity = { x: 0, y: 0 };
 
-class Missile{
-    constructor({position}){
+        // Chargement de l'image de l'alien
+        const image = new Image();
+        image.src = "./Assets/ghost.png";
+        image.onload = () => {
+            this.image = image;
+            // Largeur et hauteur de l'alien
+            this.width = 32;
+            this.height = 32;
+            // Position de l'alien sur l'axe des X et Y
+            this.position = {
+                x: position.x,
+                y: position.y
+            };
+        };
+    }
+
+    draw() {
+        // Dessin de l'alien à sa position actuelle, si l'image est chargée
+        if (this.image) {
+            c.drawImage(
+                this.image,
+                this.position.x,
+                this.position.y,
+                this.width,
+                this.height
+                
+            );
+        }
+    }
+
+    update({ velocity }) {
+        // Mise à jour de la position de l'alien en fonction de sa vitesse, si l'image est chargée
+        if (this.image) {
+            this.position.x += velocity.x;
+            this.position.y += velocity.y;
+            // Si l'alien atteint le bas de l'écran, on affiche un message de défaite
+            if (this.position.y + this.height >= world.height) {
+                console.log("You loose");
+            }
+        }
+
+        // Dessin de l'alien à sa nouvelle position
+        this.draw();
+    }
+
+    shoot(alienMissiles) {
+        // Création d'un nouveau missile ennemi à partir de la position de l'alien, si celle-ci est définie
+        if (this.position) {
+            alienMissiles.push(
+                new alienMissile({
+                    position: {
+                        x: this.position.x,
+                        y: this.position.y
+                    },
+                    velocity: {
+                        x: 0,
+                        y: 3
+                    }
+                })
+            );
+        }
+    }
+}
+
+class Missile {
+    constructor({ position }) {
         this.position = position;
-        this.velocity ={x:0,y:-5} ;
+        this.velocity = { x: 0, y: -5 };
         this.width = 3;
-        this.height =10;
+        this.height = 10;
     }
-    draw(){
+    draw() {
         c.save();
-        c.fillStyle='red';
-        c.fillRect(this.position.x,this.position.y,this.width,this.height)
-       c.fill()
-    c.restore()
-      
-   
+        c.fillStyle = 'red';
+        c.fillRect(this.position.x, this.position.y, this.width, this.height)
+        c.fill()
+        c.restore()
+
+
     }
-    update(){
+    update() {
         this.position.y += this.velocity.y;
         this.draw();
     }
-} 
-class Grid{
-    constructor(){
-        this.position={ x:0,y:0}
-        this.velocity={x:1,y:0}
-        this.invaders = [ ]
-        let rows = Math.floor((world.height/34)*(1/5));
-        const colums = Math.floor((world.width/34)*(2/5));
-        this.height=rows*34;
-        this.width = colums *34;
-        for (let x=0;x<colums;x++){
-			for(let y =0;y<rows;y++){
+}
+class Grid {
+    constructor() {
+        this.position = { x: 0, y: 0 }
+        this.velocity = { x: 1, y: 0 }
+        this.invaders = []
+        let rows = Math.floor((world.height / 34) * (1 / 5));
+        const colums = Math.floor((world.width / 34) * (2 / 5));
+        this.height = rows * 34;
+        this.width = colums * 34;
+        for (let x = 0; x < colums; x++) {
+            for (let y = 0; y < rows; y++) {
                 this.invaders.push(new Alien({
-                    position:{
-                        x:x * 34,
-                        y:y *34
+                    position: {
+                        x: x * 34,
+                        y: y * 34
                     }
                 }))
             }
         }
     }
-    update(){
+    update() {
         this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;
-        this.velocity.y =0;
-        if(this.position.x + this.width  >= world.width || this.position.x == 0){
+        this.velocity.y = 0;
+        if (this.position.x + this.width >= world.width || this.position.x == 0) {
             this.velocity.x = -this.velocity.x;
             this.velocity.y = 34;
         }
-        
-        
+
+
     }
 }
-class Particule{
-    constructor({position,velocity,radius,color}){
+class Particule {
+    constructor({ position, velocity, radius, color }) {
         this.position = position
         this.velocity = velocity
         this.radius = radius
         this.color = color
         this.opacity = 1
     }
-    draw(){
+    draw() {
         c.save();
-        c.globalAlpha = this.opacity;                         
+        c.globalAlpha = this.opacity;
         c.beginPath();
-        c.fillStyle=this.color;
-        c.arc(this.position.x,this.position.y, this.radius,0,Math.PI *2)
+        c.fillStyle = this.color;
+        c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2)
         c.fill()
         c.closePath()
         c.restore();
     }
-    update(){
+    update() {
         this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;
-        if(this.opacity > 0){
-            this.opacity -=0.01;
+        if (this.opacity > 0) {
+            this.opacity -= 0.01;
         }
         this.draw()
     }
- }
+}
 
-class alienMissile{
-    constructor({position,velocity}){
+class alienMissile {
+    constructor({ position, velocity }) {
         this.position = position;
         this.velocity = velocity;
         this.width = 3;
-        this.height =10;
+        this.height = 10;
     }
-    draw(){
+    draw() {
         // c.beginPath();
         c.save();
-        c.fillStyle='yellow';
-        c.fillRect(this.position.x,this.position.y,this.width,this.height)
-       c.fill()
-    c.restore()
+        c.fillStyle = 'yellow';
+        c.fillRect(this.position.x, this.position.y, this.width, this.height)
+        c.fill()
+        c.restore()
     }
-    update(){
+    update() {
         this.draw()
         this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;
     }
 }
 
-let missiles ;
-let alienMissiles; 
+let missiles;
+let alienMissiles;
 let grids;
-let player; 
+let player;
 let particules;
 let lifes;
 
-const init =()=>{
-     missiles =[] ;
-    alienMissiles= []; 
-    grids  = [new Grid()];
-    player= new Player(); 
-    particules=[];
-    lifes =3;
+const init = () => {
+    missiles = [];
+    alienMissiles = [];
+    grids = [new Grid()];
+    player = new Player();
+    particules = [];
+    lifes = 3;
     keys.ArrowLeft.pressed = false;
     keys.ArrowRight.pressed = false;
     keys.fired.pressed = false;
@@ -265,128 +268,135 @@ const init =()=>{
 }
 
 init();
-   
 
-const animationLoop= ()=>{
-    c.clearRect(0,0,world.width,world.height);
+
+const animationLoop = () => {
+    c.clearRect(0, 0, world.width, world.height);
     player.update();
     requestAnimationFrame(animationLoop);
-    
-    missiles.forEach((missile,index) =>{
-        if(missile.position.y + missile.height <=0) { 
-            setTimeout(() =>{
-                missiles.splice(index,1)} 
-				,0)}
-        else{missile.update();}
-    }) 
-    grids.forEach((grid,indexGrid) =>{
-        grid.update();
-        if(frames %50 ===0 && grid.invaders.length >0){
-            grid.invaders[Math.floor(Math.random()*(grid.invaders.length))].shoot(alienMissiles)
+
+    missiles.forEach((missile, index) => {
+        if (missile.position.y + missile.height <= 0) {
+            setTimeout(() => {
+                missiles.splice(index, 1)
+            }
+                , 0)
         }
-        grid.invaders.forEach((invader,indexI)=>{
-            invader.update({velocity:grid.velocity});
-            missiles.forEach((missile,indexM)=>{
-                if(missile.position.y  <=  invader.position.y + invader.height &&
-                   missile.position.y  >=  invader.position.y  &&
-                   missile.position.x + missile.width >= invader.position.x &&
-                   missile.position.x - missile.width <= invader.position.x + invader.width){
-                    for(let i=0; i <12;i++){
+        else { missile.update(); }
+    })
+    grids.forEach((grid, indexGrid) => {
+        grid.update();
+        if (frames % 50 === 0 && grid.invaders.length > 0) {
+            grid.invaders[Math.floor(Math.random() * (grid.invaders.length))].shoot(alienMissiles)
+        }
+        grid.invaders.forEach((invader, indexI) => {
+            invader.update({ velocity: grid.velocity });
+            missiles.forEach((missile, indexM) => {
+                if (missile.position.y <= invader.position.y + invader.height &&
+                    missile.position.y >= invader.position.y &&
+                    missile.position.x + missile.width >= invader.position.x &&
+                    missile.position.x - missile.width <= invader.position.x + invader.width) {
+                    for (let i = 0; i < 12; i++) {
                         particules.push(new Particule({
-                            position:{
-                                x:invader.position.x + invader.width/2,
-                                y:invader.position.y + invader.height/2
+                            position: {
+                                x: invader.position.x + invader.width / 2,
+                                y: invader.position.y + invader.height / 2
                             },
-                            velocity:{x:(Math.random()-0.5)*2,y:(Math.random()-0.5)*2},
-                            radius:Math.random()*5+1,
-                            color:'yellow'
+                            velocity: { x: (Math.random() - 0.5) * 2, y: (Math.random() - 0.5) * 2 },
+                            radius: Math.random() * 5 + 1,
+                            color: 'red'
                         }))
                     }
-                setTimeout(()=>{
-                    grid.invaders.splice(indexI,1);
-                       
-                    missiles.splice(indexM,1)
-                    if(grid.invaders.length === 0 && grids.length ==1 ){
-                        grids.splice(indexGrid,1);
-                        grids.push(new Grid());
-                    }
-                },0)
+                    setTimeout(() => {
+                        grid.invaders.splice(indexI, 1);
+                        missiles.splice(indexM, 1)
+                        if (grid.invaders.length === 0 && grids.length == 1) {
+                            grids.splice(indexGrid, 1);
+                            grids.push(new Grid());
+
+                        }
+                    }, 0)
                 }
             })
         })
-      
-    })
-    alienMissiles.forEach((alienMissile,index) =>{
-        if(alienMissile.position.y + alienMissile.height >=world.height){ 
-            setTimeout(() =>{
-                alienMissiles.splice(index,1)} ,0);
-                    
-            }
-        else{alienMissile.update();}
-        if(alienMissile.position.y + alienMissile.height >= player.position.y  && 
-            alienMissile.position.y  <= player.position.y +player.height  && 
-            alienMissile.position.x  >= player.position.x  && 
-            alienMissile.position.x + alienMissile.width <= player.position.x + player.width){
-            alienMissiles.splice(index,1);
-                for(let i=0; i <22;i++){
-                    particules.push(new Particule({
-                        position:{
-                            x:player.position.x + player.width/2,
-                            y:player.position.y + player.height/2
-                        },
-                        velocity:{x:(Math.random()-0.5)*2,y:(Math.random()-0.5)*2},
-                        radius:Math.random()*5,
-                        color:'white'
-                    }))
-                }
-                lostLife();
-                 
-            }
-        }) 
 
-    particules.forEach((particule,index)=>{
-        if(particule.opacity <=0){
-            particules.splice(index,1)
-        }else{
+    })
+
+    alienMissiles.forEach((alienMissile, index) => {
+        if (alienMissile.position.y + alienMissile.height >= world.height) {
+            setTimeout(() => {
+                alienMissiles.splice(index, 1)
+            }, 0);
+
+        }
+        else { alienMissile.update(); }
+        if (alienMissile.position.y + alienMissile.height >= player.position.y &&
+            alienMissile.position.y <= player.position.y + player.height &&
+            alienMissile.position.x >= player.position.x &&
+            alienMissile.position.x + alienMissile.width <= player.position.x + player.width) {
+            alienMissiles.splice(index, 1);
+            for (let i = 0; i < 22; i++) {
+                particules.push(new Particule({
+                    position: {
+                        x: player.position.x + player.width / 2,
+                        y: player.position.y + player.height / 2
+                    },
+                    velocity: { x: (Math.random() - 0.5) * 2, y: (Math.random() - 0.5) * 2 },
+                    radius: Math.random() * 5,
+                    color: 'white'
+                }))
+            }
+            lostLife();
+        }
+    })
+
+    particules.forEach((particule, index) => {
+        if (particule.opacity <= 0) {
+            particules.splice(index, 1)
+        } else {
             particule.update();
         }
-    }) 
+    })
 
-    
-    
- frames++;
+
+
+    frames++;
 }
 animationLoop();
 
-const  lostLife= ()=>{
+const lostLife = () => {
     lifes--;
-    if(lifes <= 0 ){
-        alert('perdu');
+    if (lifes <= 0) {
+        alert('perdu')
         init();
     }
 }
 
-addEventListener('keydown',(event)=>{
-    switch(event.key){
+addEventListener('keydown', (event) => {
+    switch (event.key) {
         case 'ArrowLeft':
             keys.ArrowLeft.pressed = true;
-        break;
+            break;
         case 'ArrowRight':
             keys.ArrowRight.pressed = true;
-        break;
-    } 
-})    
- 
-addEventListener('keyup',(event)=>{
-    switch(event.key){
-        case 'ArrowLeft':
-            keys.ArrowLeft.pressed = false;
-        break;
-        case 'ArrowRight':
-            keys.ArrowRight.pressed = false;
-        break;
-        case ' ':
-            player.shoot();
-        break;
+            break;
     }
 })
+
+addEventListener('keyup', (event) => {
+    switch (event.key) {
+        case 'ArrowLeft':
+            keys.ArrowLeft.pressed = false;
+            break;
+        case 'ArrowRight':
+            keys.ArrowRight.pressed = false;
+            break;
+        case ' ':
+            player.shoot();
+            break;
+    }
+})
+
+/*Tableau de score*/
+let score = 0
+
